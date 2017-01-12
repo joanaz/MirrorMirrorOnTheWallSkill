@@ -1,0 +1,20 @@
+MirrorMirrorSkillIntent say hello
+MirrorMirrorSkillIntent say hello world
+MirrorMirrorSkillIntent hello
+MirrorMirrorSkillIntent say hi
+MirrorMirrorSkillIntent say hi world
+MirrorMirrorSkillIntent hi
+MirrorMirrorSkillIntent how are you
+ShowTextIntent say {hello everyone|displayText}
+ShowTextIntent say {good morning|displayText}
+ShowTextIntent say {hi|displayText}
+ShowImagesIntent show me {sharks|searchTerm}
+ShowImagesIntent show me pictures of {sea animals|searchTerm}
+ShowImagesIntent show me imges of {octopus|searchTerm}
+ShowImagesIntent show pictures of {volcanoes|searchTerm}
+ShowImagesIntent show images of {bill gates|searchTerm}
+ShowImagesIntent display pictures of {animals|searchTerm}
+ShowImagesIntent display images of {rattle snakes|searchTerm}
+ShowImagesIntent find {rescue bots|searchTerm}
+ShowImagesIntent find images of {sharks|searchTerm}
+ShowImagesIntent find pictures of {sharks|searchTerm}
