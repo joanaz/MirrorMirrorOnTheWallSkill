@@ -1,11 +1,12 @@
 var awsIot = require('aws-iot-device-sdk');
 
-var app = {
-  TOPIC_IMAGES: "MagicMirror:new-images",
-  TOPIC_TEXT: "MagicMirror:new-text"
-}
+var app = {}
 
-app.setup = function(callback) {
+app.TOPIC_IMAGES = "MagicMirror:new-images"
+app.TOPIC_TEXT = "MagicMirror:new-text"
+
+
+app.setup = function() {
   app.device = awsIot.device({
     keyPath: "./certs/9bb009c929-private.pem.key",
     certPath: "./certs/9bb009c929-certificate.pem.crt",
@@ -14,11 +15,8 @@ app.setup = function(callback) {
     region: "us-east-1"
   });
 
-
   app.device.on('connect', function() {
     console.log('connect');
-
-    callback()
   });
 
   app.device.on('message', function(topic, payload) {

@@ -9,25 +9,31 @@
 */
 
 /**
- * This simple sample has no external dependencies or session management, and shows the most basic
- * example of how to create a Lambda function for handling Alexa Skill requests.
+ * A Lambda function for handling Alexa Skill MirrorMirrorOnTheWall requests.
  *
  * Examples:
  * One-shot model:
- *  User: "Alexa, tell Hello World to say hello"
- *  Alexa: "Hello World!"
+ *  User: "Mirror Mirror, On The Wall, find Snow White"
+ *  Alexa: "Showing images of Snow White"
  */
 
 /**
  * App ID for the skill
  */
-var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
+var APP_ID = "amzn1.ask.skill.12001a25-5faa-4651-84dc-cd584a1c5ffa"; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
 /**
  * The AlexaSkill prototype and helper functions
  */
 var AlexaSkill = require('./AlexaSkill');
-var MirrorMirror = require('./MirrorMirror')
+
+var MirrorMirror = require('./MirrorMirror');
+MirrorMirror.setup();
+
+var GoogleImages = require('google-images');
+var cse = require("./certs/cse.json")
+var googleImages = new GoogleImages(cse.ID, cse.API_key)
+
 
 /**
  * MirrorMirrorSkill is a child of AlexaSkill.
@@ -71,43 +77,29 @@ MirrorMirrorSkill.prototype.intentHandlers = {
     "ShowTextIntent": function(intent, session, response) {
         var cardTitle = "Mirror Mirror - Say Something";
         var displayText = intent.slots.displayText.value;
-        var speechOutput = "Yes, my queen " + displayText;
+        var speechOutput = "Yes, my queen, " + displayText;
 
-        MirrorMirror.setup(function() {
-            // Send publish attempt to AWS IoT
-            MirrorMirror.displayText(displayText);
-
-            // Done
-            response.tellWithCard(speechOutput, cardTitle, displayText);
-
-        });
+        // Send publish attempt to AWS IoT
+        MirrorMirror.displayText(displayText,
+            response.tellWithCard(speechOutput, cardTitle, displayText));
     },
     "ShowImagesIntent": function(intent, session, response) {
         var cardTitle = "Magic Mirror - Show Me Something";
         var searchTerm = intent.slots.searchTerm.value;
-        var speechOutput = "I told your mirror to show you images of " + searchTerm;
+        var speechOutput = "Yes, my queen, showing images of " + searchTerm;
 
         // Search for images
-        googleImages.search(searchTerm, function(err, images) {
-            console.log("Found images: " + JSON.stringify(images));
-
-            // Connect to AWS IoT
-            MirrorMirror.setup(function(clientToken) {
-
-                // Send images
-                MirrorMirror.showImages(images, searchTerm);
-
-                // Done
-                response.tellWithCard(speechOutput, cardTitle, searchTerm);
-
-            });
-        });
+        googleImages.search(searchTerm).then(function(images) {
+            // Connect to AWS IoT & Send images
+            MirrorMirror.showImages(images, searchTerm,
+                response.tellWithCard(speechOutput, cardTitle, JSON.stringify(images)));
+        })
     }
 };
 
 // Create the handler that responds to the Alexa Request.
 exports.handler = function(event, context) {
     // Create an instance of the MirrorMirrorSkill skill.
-    var MirrorMirrorSkill = new MirrorMirrorSkill();
-    MirrorMirrorSkill.execute(event, context);
+    var mirrorMirrorSkill = new MirrorMirrorSkill();
+    mirrorMirrorSkill.execute(event, context);
 };

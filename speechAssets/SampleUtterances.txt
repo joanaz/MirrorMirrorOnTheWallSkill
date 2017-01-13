@@ -1,8 +1,4 @@
-MirrorMirrorSkillIntent say hello
-MirrorMirrorSkillIntent say hello world
 MirrorMirrorSkillIntent hello
-MirrorMirrorSkillIntent say hi
-MirrorMirrorSkillIntent say hi world
 MirrorMirrorSkillIntent hi
 MirrorMirrorSkillIntent how are you
 ShowTextIntent say {hello everyone|displayText}
