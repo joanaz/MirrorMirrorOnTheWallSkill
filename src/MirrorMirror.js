@@ -8,11 +8,12 @@ app.TOPIC_TEXT = "MagicMirror:new-text"
 
 app.setup = function() {
   app.device = awsIot.device({
-    keyPath: "./certs/9bb009c929-private.pem.key",
-    certPath: "./certs/9bb009c929-certificate.pem.crt",
-    caPath: "./certs/rootCA.pem.crt",
-    clientId: "MagicMirror" + (new Date().getTime()),
-    region: "us-east-1"
+    keyPath: __dirname + "/certs/MagicMirror.private.key",
+    certPath: __dirname + "/certs/MagicMirror.cert.pem",
+    caPath: __dirname + "/certs/root-CA.crt",
+    clientId: "MirrorMirror" + (new Date().getTime()),
+    region: "us-east-1",
+    host: "a1vxvxbj3djyge.iot.us-east-1.amazonaws.com"
   });
 
   app.device.on('connect', function() {
