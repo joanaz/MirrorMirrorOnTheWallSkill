@@ -26,8 +26,7 @@ app.setup = function() {
 }
 
 // Method that will accept an array of images and publish to AWS IoT
-app.showImages = function(images, searchTerm, callback) {
-  var callback = callback || function() {};
+app.showImages = function(images, searchTerm, response, speechOutput) {
   var searchTerm = searchTerm || null;
   var imageList = images || [];
   var timestamp = new Date().getTime();
@@ -42,13 +41,12 @@ app.showImages = function(images, searchTerm, callback) {
 
   app.device.publish(app.TOPIC_IMAGES, JSON.stringify(update), function() {
     console.log("Published: \nTopic => " + app.TOPIC_IMAGES + "Data => " + JSON.stringify(update));
-    callback();
+    response.ask.call(response, speechOutput)
   });
 }
 
 // Method that will accept an array of images and publish to AWS IoT
-app.displayText = function(text, callback) {
-  var callback = callback || function() {};
+app.displayText = function(text, response, speechOutput) {
   var displayText = text || "Oops. I missed it. Try again.";
   var timestamp = new Date().getTime();
   var update = {
@@ -58,7 +56,7 @@ app.displayText = function(text, callback) {
 
   app.device.publish(app.TOPIC_TEXT, JSON.stringify(update), function() {
     console.log("Published: \nTopic => " + app.TOPIC_TEXT + "Data => " + JSON.stringify(update));
-    callback();
+    response.ask.call(response, speechOutput)
   });
 }
 

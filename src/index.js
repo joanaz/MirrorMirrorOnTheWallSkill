@@ -80,8 +80,7 @@ MirrorMirrorSkill.prototype.intentHandlers = {
         var speechOutput = "Yes, my queen, " + displayText;
 
         // Send publish attempt to AWS IoT
-        MirrorMirror.displayText(displayText,
-            response.tellWithCard(speechOutput, cardTitle, displayText));
+        MirrorMirror.displayText(displayText, response, speechOutput);
     },
     "ShowImagesIntent": function(intent, session, response) {
         var cardTitle = "Magic Mirror - Show Me Something";
@@ -91,8 +90,7 @@ MirrorMirrorSkill.prototype.intentHandlers = {
         // Search for images
         googleImages.search(searchTerm).then(function(images) {
             // Connect to AWS IoT & Send images
-            MirrorMirror.showImages(images, searchTerm,
-                response.tellWithCard(speechOutput, cardTitle, JSON.stringify(images)));
+            MirrorMirror.showImages(images, searchTerm, response, speechOutput);
         })
     }
 };
