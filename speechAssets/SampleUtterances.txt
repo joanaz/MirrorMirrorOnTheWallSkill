@@ -14,3 +14,9 @@ ShowImagesIntent display images of {rattle snakes|searchTerm}
 ShowImagesIntent find {rescue bots|searchTerm}
 ShowImagesIntent find images of {sharks|searchTerm}
 ShowImagesIntent find pictures of {sharks|searchTerm}
+TurnOnModuleIntent turn on {smile test|moduleName}
+TurnOnModuleIntent open {smile test|moduleName}
+TurnOffModuleIntent turn off {smile test|moduleName}
+TurnOffModuleIntent close {smile test|moduleName}
+
+

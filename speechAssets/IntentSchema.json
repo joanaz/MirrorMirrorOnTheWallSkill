@@ -15,5 +15,17 @@
       "name": "searchTerm",
       "type": "AMAZON.LITERAL"
     }]
+  }, {
+    "intent": "TurnOnModuleIntent",
+    "slots": [{
+      "name": "moduleName",
+      "type": "AMAZON.LITERAL"
+    }]
+  }, {
+    "intent": "TurnOffModuleIntent",
+    "slots": [{
+      "name": "moduleName",
+      "type": "AMAZON.LITERAL"
+    }]
   }]
 }

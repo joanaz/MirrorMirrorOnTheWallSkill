@@ -75,7 +75,6 @@ MirrorMirrorSkill.prototype.intentHandlers = {
         response.ask("You can say hello to me!", "You can say hello to me!");
     },
     "ShowTextIntent": function(intent, session, response) {
-        var cardTitle = "Mirror Mirror - Say Something";
         var displayText = intent.slots.displayText.value;
         var speechOutput = "Yes, my queen, " + displayText;
 
@@ -83,7 +82,6 @@ MirrorMirrorSkill.prototype.intentHandlers = {
         MirrorMirror.displayText(displayText, response, speechOutput);
     },
     "ShowImagesIntent": function(intent, session, response) {
-        var cardTitle = "Magic Mirror - Show Me Something";
         var searchTerm = intent.slots.searchTerm.value;
         var speechOutput = "Yes, my queen, showing images of " + searchTerm;
 
@@ -92,7 +90,22 @@ MirrorMirrorSkill.prototype.intentHandlers = {
             // Connect to AWS IoT & Send images
             MirrorMirror.showImages(images, searchTerm, response, speechOutput);
         })
+    },
+    "TurnOnModuleIntent": function(intent, session, response) {
+        var moduleName = intent.slots.moduleName.value;
+        var speechOutput = "Yes, my queen, opening " + moduleName;
+
+        // Send publish attempt to AWS IoT
+        MirrorMirror.changeModule(moduleName, true, response, speechOutput);
+    },
+    "TurnOffModuleIntent": function(intent, session, response) {
+        var moduleName = intent.slots.moduleName.value;
+        var speechOutput = "Yes, my queen, closing " + moduleName;
+
+        // Send publish attempt to AWS IoT
+        MirrorMirror.changeModule(moduleName, false, response, speechOutput);
     }
+
 };
 
 // Create the handler that responds to the Alexa Request.

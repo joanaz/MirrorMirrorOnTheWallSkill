@@ -4,6 +4,8 @@ var app = {}
 
 app.TOPIC_IMAGES = "MagicMirror:new-images"
 app.TOPIC_TEXT = "MagicMirror:new-text"
+app.TOPIC_MODULE = "MagicMirror:change-module"
+
 
 
 app.setup = function() {
@@ -59,5 +61,22 @@ app.displayText = function(text, response, speechOutput) {
     response.ask.call(response, speechOutput)
   });
 }
+
+// Method that will accept an array of images and publish to AWS IoT
+app.changeModule = function(text, turnOn, response, speechOutput) {
+  var moduleName = text || "Oops. I missed it. Try again.";
+  var timestamp = new Date().getTime();
+  var update = {
+    "moduleName": moduleName,
+    "turnOn": turnOn,
+    timestamp: timestamp
+  };
+
+  app.device.publish(app.TOPIC_MODULE, JSON.stringify(update), function() {
+    console.log("Published: \nTopic => " + app.TOPIC_MODULE + "Data => " + JSON.stringify(update));
+    response.ask.call(response, speechOutput)
+  });
+}
+
 
 module.exports = app
