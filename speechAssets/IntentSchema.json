@@ -1,8 +1,10 @@
 {
   "intents": [{
-    "intent": "MirrorMirrorSkillIntent"
+    "intent": "MirrorMirrorHelloIntent"
   }, {
     "intent": "AMAZON.HelpIntent"
+  }, {
+    "intent": "AMAZON.StopIntent"
   }, {
     "intent": "ShowTextIntent",
     "slots": [{

@@ -68,11 +68,14 @@ MirrorMirrorSkill.prototype.eventHandlers.onSessionEnded = function(sessionEnded
 
 MirrorMirrorSkill.prototype.intentHandlers = {
     // register custom intent handlers
-    "MirrorMirrorSkillIntent": function(intent, session, response) {
-        response.tellWithCard("Hello my queen!", "Hello", "You are the fairest of them all!");
+    "MirrorMirrorHelloIntent": function(intent, session, response) {
+        response.tell("Hello my queen!");
     },
     "AMAZON.HelpIntent": function(intent, session, response) {
         response.ask("You can say hello to me!", "You can say hello to me!");
+    },
+    "AMAZON.StopIntent": function(intent, session, response) {
+        response.tell("Stopped");
     },
     "ShowTextIntent": function(intent, session, response) {
         var displayText = intent.slots.displayText.value;

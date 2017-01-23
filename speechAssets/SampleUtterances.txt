@@ -1,6 +1,6 @@
-MirrorMirrorSkillIntent hello
-MirrorMirrorSkillIntent hi
-MirrorMirrorSkillIntent how are you
+MirrorMirrorHelloIntent hello
+MirrorMirrorHelloIntent hi
+MirrorMirrorHelloIntent how are you
 ShowTextIntent say {hello everyone|displayText}
 ShowTextIntent say {good morning|displayText}
 ShowTextIntent say {hi|displayText}
@@ -14,9 +14,11 @@ ShowImagesIntent display images of {rattle snakes|searchTerm}
 ShowImagesIntent find {rescue bots|searchTerm}
 ShowImagesIntent find images of {sharks|searchTerm}
 ShowImagesIntent find pictures of {sharks|searchTerm}
-TurnOnModuleIntent turn on {smile test|moduleName}
+TurnOnModuleIntent open {compliments|moduleName}
 TurnOnModuleIntent open {smile test|moduleName}
-TurnOffModuleIntent turn off {smile test|moduleName}
+TurnOnModuleIntent turn on {smile test|moduleName}
+TurnOnModuleIntent start {smile test|moduleName}
+TurnOffModuleIntent close {compliments|moduleName}
 TurnOffModuleIntent close {smile test|moduleName}
-
-
+TurnOffModuleIntent turn off {smile test|moduleName}
+TurnOffModuleIntent finish {smile test|moduleName}

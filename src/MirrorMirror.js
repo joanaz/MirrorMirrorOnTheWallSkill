@@ -7,7 +7,6 @@ app.TOPIC_TEXT = "MagicMirror:new-text"
 app.TOPIC_MODULE = "MagicMirror:change-module"
 
 
-
 app.setup = function() {
   app.device = awsIot.device({
     keyPath: __dirname + "/certs/MagicMirror.private.key",
@@ -31,11 +30,9 @@ app.setup = function() {
 app.showImages = function(images, searchTerm, response, speechOutput) {
   var searchTerm = searchTerm || null;
   var imageList = images || [];
-  var timestamp = new Date().getTime();
   var update = {
     "images": imageList,
     "displayText": searchTerm,
-    timestamp: timestamp
   };
 
   // validate?
@@ -50,10 +47,8 @@ app.showImages = function(images, searchTerm, response, speechOutput) {
 // Method that will accept an array of images and publish to AWS IoT
 app.displayText = function(text, response, speechOutput) {
   var displayText = text || "Oops. I missed it. Try again.";
-  var timestamp = new Date().getTime();
   var update = {
     "displayText": displayText,
-    timestamp: timestamp
   };
 
   app.device.publish(app.TOPIC_TEXT, JSON.stringify(update), function() {
@@ -65,11 +60,9 @@ app.displayText = function(text, response, speechOutput) {
 // Method that will accept an array of images and publish to AWS IoT
 app.changeModule = function(text, turnOn, response, speechOutput) {
   var moduleName = text || "Oops. I missed it. Try again.";
-  var timestamp = new Date().getTime();
   var update = {
     "moduleName": moduleName,
     "turnOn": turnOn,
-    timestamp: timestamp
   };
 
   app.device.publish(app.TOPIC_MODULE, JSON.stringify(update), function() {
