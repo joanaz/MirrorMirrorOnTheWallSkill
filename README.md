@@ -23,7 +23,7 @@ You need to setup an AWS IoT Device, and save the credentials locally in this re
 ## Dependencies
 
 - [aws-iot-device-sdk](https://aws.amazon.com/iot/sdk/) (installed via `npm install`)
-- [Google Images Search](https://www.npmjs.com/package/google-images)(installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in certs/cse.json, which looks like:
+- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in certs/cse.json, which looks like:
 
     ```
     {
