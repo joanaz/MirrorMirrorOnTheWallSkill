@@ -28,7 +28,7 @@ You need to setup an AWS IoT Device, and save the credentials locally in this re
     ```
     {
         "ID": "YOUR CSE ID",
-        "API_key": "YOU API KEY"
+        "API_key": "YOUR API KEY"
     }
     ```
 
@@ -42,29 +42,27 @@ To run this skill you need to do two things:
 
 ### AWS Lambda Setup
 
-1. Go to the AWS Console and click on the Lambda link. Note: ensure you are in us-east or you won't be able to use Alexa with Lambda.
-2. Click on the Create a Lambda Function or Get Started Now button.
-3. Choose blank blueprint
-4. Name the Lambda Function
-5. Select the runtime as Node.js
-5. Go to the the src directory, select all files and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
-6. Select Code entry type as "Upload a .ZIP file" and then upload the .zip file to the Lambda
-7. Keep the Handler as index.handler (this refers to the main js file in the zip).
-8. Create a basic execution role and click create.
-9. Leave the Advanced settings as the defaults.
-10. Click "Next" and review the settings then click "Create Function"
-11. Click the "Event Sources" tab and select "Add event source"
-12. Set the Event Source type as Alexa Skills kit and Enable it now. Click Submit.
-13. Copy the ARN from the top right to be used later in the Alexa Skill Setup
+1. Go to the AWS Console and click on the __Lambda__ link. Note: ensure you are in __us-east__ or you won't be able to use Alexa with Lambda.
+2. Click on the __Create a Lambda Function__ or __Get Started Now__ button.
+3. Choose __Blank Blueprint__
+4. Choose trigger __Alexa Skills Kit__, click "Next"
+5. Name the Lambda Function, select the runtime as __Node.js__
+6. Go to the __src__ directory, select all files and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
+7. Select __Code entry type__ as "Upload a .ZIP file" and then upload the .zip file to the Lambda
+8. Keep the Handler as index.handler (this refers to the main js file in the zip).
+9. __Create new role from template__ and name it.
+10. Leave the Advanced settings as the defaults.
+11. Click "Next" and review the settings then click "Create Function"
+12. Copy the __ARN__ from the top right to be used later in the Alexa Skill Setup
 
 ### Alexa Skill Setup
 
-1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and click Add a New Skill.
+1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and click __Add a New Skill__.
 2. Set "Mirror Mirror On The Wall" as the skill name and "on the wall" as the invocation name, this is what is used to activate your skill. For example you would say: "Alexa, on the wall, say hello". If you customized the wake word as "Mirror mirror", you can say "Mirror mirror on the wall, find Snow White".
-3. Select the Lambda ARN for the skill Endpoint and paste the ARN copied from above. Click Next.
-4. Copy the Intent Schema from the included IntentSchema.json in the speechAssets folder.
-5. Copy the Sample Utterances from the included SampleUtterances.txt. Click Next.
-6. [optional] go back to the skill Information tab and copy the appId. Paste the appId into the index.js file for the variable APP_ID, then update the lambda source zip file with this change and upload to lambda again, this step makes sure the lambda function only serves request from authorized source.
+3. Select the __Lambda ARN__ for the skill Endpoint and paste the ARN copied from above. Click Next.
+4. Copy the __Intent Schema__ from the included IntentSchema.json in the speechAssets folder.
+5. Copy the __Sample Utterances__ from the included SampleUtterances.txt. Click Next.
+6. [optional] go back to the skill Information tab and copy the appId. Paste the appId into the index.js file for the variable APP_ID, then update the Lambda source zip file with this change and upload to Lambda again, this step makes sure the Lambda function only serves request from authorized source.
 7. You are now able to start testing your Alexa skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
 8. In order to test it, try to say some of the Sample Utterances from the Examples section below.
 9. Your skill is now saved and once you are finished testing you can continue to publish your skill.
@@ -83,7 +81,7 @@ User: "Mirror mirror on the wall, say hello"
 Alexa: "Yes, my queen, hello"
 ```
 
-If you enabled the complementary Magic Mirror Module, the word "hello" will also be displayed on your Magic Mirror.
+If you enabled the [complementary Magic Mirror Module](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall), the word "hello" will also be displayed on your Magic Mirror.
 
 
 ## List of commands
@@ -96,7 +94,6 @@ The text in {} will be displayed on Magic Mirror in bold.
 - `"say {hello}"`
 - `"say {good morning}"`
 - `"say {you are the fairest of them all}"`
-
 
 ### Display images
 
@@ -113,7 +110,6 @@ The text in {} will be searched by Google Image Search API, and the returned ima
 - `"display pictures of {dwarfs}"`
 - `"display images of {dwarfs}"`
 
-
 ### Turn on/off Magic Mirror Modules
 
 To turn on/off a Magic Mirror Module, it has to be installed and configured in the main project already. You also have to map its official module name to a transcribable spoken name in ModuleNames.json. For example, ["MMM-Globe"](https://github.com/LukeSkywalker92/MMM-Globe) maps to "globe", ["currentweather"](https://github.com/MichMich/MagicMirror/tree/master/modules/default/currentweather) maps to "current weather".
@@ -129,5 +125,3 @@ To turn off a Magic Mirror Module, say:
 - `"close {compliments}"`
 - `"turn off {current weather}"`
 - `"finish {smile test}"`
-
-
