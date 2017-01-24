@@ -6,7 +6,7 @@ ShowTextIntent say {good morning|displayText}
 ShowTextIntent say {hi|displayText}
 ShowImagesIntent show me {sharks|searchTerm}
 ShowImagesIntent show me pictures of {sea animals|searchTerm}
-ShowImagesIntent show me imges of {octopus|searchTerm}
+ShowImagesIntent show me images of {octopus|searchTerm}
 ShowImagesIntent show pictures of {volcanoes|searchTerm}
 ShowImagesIntent show images of {bill gates|searchTerm}
 ShowImagesIntent display pictures of {animals|searchTerm}

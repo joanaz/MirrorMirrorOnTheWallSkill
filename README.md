@@ -1,17 +1,47 @@
-# Sample AWS Lambda function for Alexa
-A simple [AWS Lambda](http://aws.amazon.com/lambda) function that demonstrates how to write a skill for the Amazon Echo using the Alexa SDK.
+# Mirror Mirror On The Wall Alexa Skill
+An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for communicating and controlling a [MagicMirror](https://github.com/MichMich/MagicMirror) using AWS IoT Device Gateway. 
 
-## Concepts
-This simple sample has no external dependencies or session management, and shows the most basic example of how to create a Lambda function for handling Alexa Skill requests.
+It is complementary to the Magic Mirror Module [Mirror Mirror On The Wall](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall).
+
+
+## AWS IoT Credentials
+
+You need to setup an AWS IoT Device, and save the credentials locally in this repo. You can use the same credentials for the above complementary Magic Mirror Module.
+
+1. login to AWS Management Console
+2. find __AWS IoT__ service
+3. click on __Connect__ at the left menu bar
+4. under _Configuring a device_, click on __Get Started__
+5. choose __Linux/OSX__ platform, and __Node.JS__
+6. give your device a name
+7. download credentials and run the start.sh script, which will generate a root-CA.crt
+8. create a folder called __certs__ inside the src folder
+9. place all the credentials in the __certs__ folder
+10. open MirrorMirror.js, replace the __keyPath__, __certPath__, and __host__ to your own
+
+
+## Dependencies
+
+- [aws-iot-device-sdk](https://aws.amazon.com/iot/sdk/) (installed via `npm install`)
+- [Google Images Search](https://www.npmjs.com/package/google-images)(installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in certs/cse.json, which looks like:
+    ```
+    {
+        "ID": "YOUR CSE ID",
+        "API_key": "YOU API KEY"
+    }
+    ```
+
 
 ## Setup
-To run this example skill you need to do two things. The first is to deploy the example code in lambda, and the second is to configure the Alexa skill to use Lambda.
+To run this skill you need to do two things:
+1. deploy the code in Lambda
+2. configure the Alexa skill to use Lambda
 
 ### AWS Lambda Setup
 1. Go to the AWS Console and click on the Lambda link. Note: ensure you are in us-east or you won't be able to use Alexa with Lambda.
 2. Click on the Create a Lambda Function or Get Started Now button.
-3. Skip the blueprint
-4. Name the Lambda Function "Hello-World-Example-Skill".
+3. Choose blank blueprint
+4. Name the Lambda Function
 5. Select the runtime as Node.js
 5. Go to the the src directory, select all files and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
 6. Select Code entry type as "Upload a .ZIP file" and then upload the .zip file to the Lambda
@@ -25,16 +55,75 @@ To run this example skill you need to do two things. The first is to deploy the 
 
 ### Alexa Skill Setup
 1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and click Add a New Skill.
-2. Set "HelloWorld" as the skill name and "hello world" as the invocation name, this is what is used to activate your skill. For example you would say: "Alexa, tell Hello World to say hello"
+2. Set "Mirror Mirror On The Wall" as the skill name and "on the wall" as the invocation name, this is what is used to activate your skill. For example you would say: "Alexa, on the wall, say hello". If you customized the wake word as "Mirror mirror", you can say "Mirror mirror on the wall, find Snow White".
 3. Select the Lambda ARN for the skill Endpoint and paste the ARN copied from above. Click Next.
-4. Copy the Intent Schema from the included IntentSchema.json.
+4. Copy the Intent Schema from the included IntentSchema.json in the speechAssets folder.
 5. Copy the Sample Utterances from the included SampleUtterances.txt. Click Next.
 6. [optional] go back to the skill Information tab and copy the appId. Paste the appId into the index.js file for the variable APP_ID,
    then update the lambda source zip file with this change and upload to lambda again, this step makes sure the lambda function only serves request from authorized source.
-7. You are now able to start testing your sample skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
+7. You are now able to start testing your Alexa skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
 8. In order to test it, try to say some of the Sample Utterances from the Examples section below.
 9. Your skill is now saved and once you are finished testing you can continue to publish your skill.
 
 ## Examples
-    User: "Alexa, tell Hello World to say hello"
-    Alexa: "Hello World!"
+
+```
+User: "Alexa, on the wall, hello"
+Alexa: "Hello my queen"
+```
+
+If you are running [AlexaPi](https://github.com/alexa-pi/AlexaPi) on Raspberry Pi, or using a wake word engine like [Snowboy](https://github.com/Kitt-AI/snowboy), you can change the wake word from "Alexa" to "Mirror mirror", then you can say:
+
+```
+User: "Mirror mirror on the wall, say hello"
+Alexa: "Yes, my queen, hello"
+```
+
+If you enabled the complementary Magic Mirror Module, the word "hello" will also be displayed on your Magic Mirror.
+
+
+## List of commands
+After you invoked this Alexa skill by saying `"Mirror mirror on the wall"`, you can say any of the following commands to trigger different actions on the Magic Mirror.
+
+### Display text
+
+The text in {} will be displayed on Magic Mirror in bold.
+
+- `"say {hello}"`
+- `"say {good morning}"`
+- `"say {you are the fairest of them all}"`
+
+
+### Display images
+
+The text in {} will be searched by Google Image Search API, and the returned images will be displayed on Magic Mirror, with the text.
+
+- `"find {snow white}"`
+- `"find images of {hunter}"`
+- `"find pictures of {dwarfs}"`
+- `"show me {snow white}"`
+- `"show me pictures of {hunter}"`
+- `"show me images of {dwarfs}"`
+- `"show pictures of {hunter}"`
+- `"show images of {snow white}"`
+- `"display pictures of {dwarfs}"`
+- `"display images of {dwarfs}"`
+
+
+### Turn on/off Magic Mirror Modules
+
+To turn on/off a Magic Mirror Module, it has to be installed and configured in the main project already. You also have to map its official module name to a transcribable spoken name in ModuleNames.json. For example, ["MMM-Globe"](https://github.com/LukeSkywalker92/MMM-Globe) maps to "globe", ["currentweather"](https://github.com/MichMich/MagicMirror/tree/master/modules/default/currentweather) maps to "current weather".
+
+To turn on a Magic Mirror Module, say:
+- `"start {newsfeed}"`
+- `"start {compliments}"`
+- `"turn on {current weather}"`
+- `"open {smile test}"`
+
+To turn off a Magic Mirror Module, say:
+- `"close {newsfeed}"`
+- `"close {compliments}"`
+- `"turn off {current weather}"`
+- `"finish {smile test}"`
+
+

@@ -8,9 +8,11 @@
   },
   "keywords": [
     "magic mirror",
+    "smart mirror",
     "AWS Lambda",
     "Alexa Skill",
-    "AWS IoT"
+    "AWS IoT",
+    "device gateway"
   ],
   "author": "Joanna Zhang",
   "contributors": "https://github.com/joanaz/MirrorMirrorOnTheWallSkill/graphs/contributors",
