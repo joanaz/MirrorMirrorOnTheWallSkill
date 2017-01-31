@@ -17,13 +17,13 @@ You need to setup an AWS IoT Device, and save the credentials locally in this re
 7. download credentials and run the start.sh script, which will generate a root-CA.crt
 8. create a folder called __certs__ inside the src folder
 9. place all the credentials in the __certs__ folder
-10. open MirrorMirror.js, replace the __keyPath__, __certPath__, and __host__ to your own
+10. open MirrorMirror.js, replace the __keyPath__, __certPath__, and __caPath__ to your own
 
 
 ## Dependencies
 
-- [aws-iot-device-sdk](https://aws.amazon.com/iot/sdk/) (installed via `npm install`)
-- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in certs/cse.json, which looks like:
+- [aws-iot-device-sdk](https://github.com/aws/aws-iot-device-sdk-js) (installed via `npm install`)
+- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in certs/cse.json, which should look like this:
 
     ```
     {
@@ -62,7 +62,7 @@ To run this skill you need to do two things:
 3. Select the __Lambda ARN__ for the skill Endpoint and paste the ARN copied from above. Click Next.
 4. Copy the __Intent Schema__ from the included IntentSchema.json in the speechAssets folder.
 5. Copy the __Sample Utterances__ from the included SampleUtterances.txt. Click Next.
-6. [optional] go back to the skill Information tab and copy the appId. Paste the appId into the index.js file for the variable APP_ID, then update the Lambda source zip file with this change and upload to Lambda again, this step makes sure the Lambda function only serves request from authorized source.
+6. Go back to the skill Information tab and copy the appId. Paste the appId into the index.js file for the variable __APP_ID__, then update the Lambda source zip file with this change and __upload to Lambda__ again, this step makes sure the Lambda function only serves request from authorized source.
 7. You are now able to start testing your Alexa skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
 8. In order to test it, try to say some of the Sample Utterances from the Examples section below.
 9. Your skill is now saved and once you are finished testing you can continue to publish your skill.
@@ -70,22 +70,22 @@ To run this skill you need to do two things:
 ## Examples
 
 ```
-User: "Alexa, on the wall, hello"
-Alexa: "Hello my queen"
+User: "Alexa, On The Wall, hello"
+Alexa: "Hello my Queen, what can I do for you? "
 ```
 
-If you are running [AlexaPi](https://github.com/alexa-pi/AlexaPi) on Raspberry Pi, or using a wake word engine like [Snowboy](https://github.com/Kitt-AI/snowboy), you can change the wake word from "Alexa" to "Mirror mirror", then you can say:
+If you are running [AlexaPi](https://github.com/alexa-pi/AlexaPi) on Raspberry Pi, or using a wake word engine like [Snowboy](https://github.com/Kitt-AI/snowboy), you can change the wake word from "Alexa" to "Mirror Mirror", then you can say:
 
 ```
-User: "Mirror mirror on the wall, say hello"
-Alexa: "Yes, my queen, hello"
+User: "Mirror Mirror On The Wall, say Hello"
+Alexa: "Yes, my Queen. Hello."
 ```
 
 If you enabled the [complementary Magic Mirror Module](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall), the word "hello" will also be displayed on your Magic Mirror.
 
 
 ## List of commands
-After you invoked this Alexa skill by saying `"Mirror mirror on the wall"`, you can say any of the following commands to trigger different actions on the Magic Mirror.
+After you invoked this Alexa skill by saying `"Mirror Mirror On The Wall"`, you can say any of the following commands to trigger different actions on the Magic Mirror.
 
 ### Display text
 
@@ -94,6 +94,10 @@ The text in {} will be displayed on Magic Mirror in bold.
 - `"say {hello}"`
 - `"say {good morning}"`
 - `"say {you are the fairest of them all}"`
+- `"display text of {hello}"`
+- `"display text of {good morning}"`
+- `"show text of {hello}"`
+- `"show text of {good morning}"`
 
 ### Display images
 
@@ -116,12 +120,12 @@ To turn on/off a Magic Mirror Module, it has to be installed and configured in t
 
 To turn on a Magic Mirror Module, say:
 - `"start {newsfeed}"`
-- `"start {compliments}"`
-- `"turn on {current weather}"`
+- `"start {current weather}"`
+- `"turn on {compliments}"`
 - `"open {smile test}"`
 
 To turn off a Magic Mirror Module, say:
 - `"close {newsfeed}"`
-- `"close {compliments}"`
-- `"turn off {current weather}"`
+- `"close {current weather}"`
+- `"turn off {compliments}"`
 - `"finish {smile test}"`

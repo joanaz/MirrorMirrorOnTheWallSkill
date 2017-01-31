@@ -6,6 +6,8 @@
   }, {
     "intent": "AMAZON.StopIntent"
   }, {
+    "intent": "AMAZON.CancelIntent"
+  }, {
     "intent": "ShowTextIntent",
     "slots": [{
       "name": "displayText",

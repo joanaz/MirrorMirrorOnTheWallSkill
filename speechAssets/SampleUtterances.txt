@@ -1,24 +1,34 @@
 MirrorMirrorHelloIntent hello
 MirrorMirrorHelloIntent hi
-MirrorMirrorHelloIntent how are you
+ShowTextIntent say {hi|displayText}
+ShowTextIntent say {hello|displayText}
 ShowTextIntent say {hello everyone|displayText}
 ShowTextIntent say {good morning|displayText}
-ShowTextIntent say {hi|displayText}
+ShowTextIntent display text of {hello|displayText}
+ShowTextIntent display text of  {good morning|displayText}
+ShowTextIntent show text of {hello|displayText}
+ShowTextIntent show text of  {good morning|displayText}
 ShowImagesIntent show me {sharks|searchTerm}
 ShowImagesIntent show me pictures of {sea animals|searchTerm}
 ShowImagesIntent show me images of {octopus|searchTerm}
 ShowImagesIntent show pictures of {volcanoes|searchTerm}
-ShowImagesIntent show images of {bill gates|searchTerm}
+ShowImagesIntent show images of {birds|searchTerm}
+ShowImagesIntent show images of {Bill Gates|searchTerm}
 ShowImagesIntent display pictures of {animals|searchTerm}
 ShowImagesIntent display images of {rattle snakes|searchTerm}
-ShowImagesIntent find {rescue bots|searchTerm}
+ShowImagesIntent find {hunter|searchTerm}
+ShowImagesIntent find {Snow White|searchTerm}
 ShowImagesIntent find images of {sharks|searchTerm}
+ShowImagesIntent find images of {Elon Musk|searchTerm}
 ShowImagesIntent find pictures of {sharks|searchTerm}
 TurnOnModuleIntent open {compliments|moduleName}
 TurnOnModuleIntent open {smile test|moduleName}
+TurnOnModuleIntent turn on {compliments|moduleName}
 TurnOnModuleIntent turn on {smile test|moduleName}
+TurnOnModuleIntent start {compliments|moduleName}
 TurnOnModuleIntent start {smile test|moduleName}
 TurnOffModuleIntent close {compliments|moduleName}
 TurnOffModuleIntent close {smile test|moduleName}
 TurnOffModuleIntent turn off {smile test|moduleName}
+TurnOffModuleIntent turn off {compliments|moduleName}
 TurnOffModuleIntent finish {smile test|moduleName}

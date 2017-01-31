@@ -1,7 +1,7 @@
 .DS_Store
-*/certs
+node_modules
 *.crt
 *.key
 *.pem
-node_modules
+**/cse.json
 *.zip

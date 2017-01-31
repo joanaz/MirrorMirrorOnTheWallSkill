@@ -14,7 +14,6 @@ app.setup = function() {
     caPath: __dirname + "/certs/root-CA.crt",
     clientId: "MirrorMirror" + (new Date().getTime()),
     region: "us-east-1",
-    host: "a1vxvxbj3djyge.iot.us-east-1.amazonaws.com"
   });
 
   app.device.on('connect', function() {
@@ -27,39 +26,32 @@ app.setup = function() {
 }
 
 // Method that will accept an array of images and publish to AWS IoT
-app.showImages = function(images, searchTerm, response, speechOutput) {
-  var searchTerm = searchTerm || null;
-  var imageList = images || [];
+app.displayText = function(text, callback) {
   var update = {
-    "images": imageList,
-    "displayText": searchTerm,
-  };
-
-  // validate?
-  if (!imageList.length) return;
-
-  app.device.publish(app.TOPIC_IMAGES, JSON.stringify(update), function() {
-    console.log("Published: \nTopic => " + app.TOPIC_IMAGES + "Data => " + JSON.stringify(update));
-    response.ask.call(response, speechOutput)
-  });
-}
-
-// Method that will accept an array of images and publish to AWS IoT
-app.displayText = function(text, response, speechOutput) {
-  var displayText = text || "Oops. I missed it. Try again.";
-  var update = {
-    "displayText": displayText,
+    "displayText": text
   };
 
   app.device.publish(app.TOPIC_TEXT, JSON.stringify(update), function() {
     console.log("Published: \nTopic => " + app.TOPIC_TEXT + "Data => " + JSON.stringify(update));
-    response.ask.call(response, speechOutput)
+    callback()
   });
 }
 
 // Method that will accept an array of images and publish to AWS IoT
-app.changeModule = function(text, turnOn, response, speechOutput) {
-  var moduleName = text || "Oops. I missed it. Try again.";
+app.showImages = function(images, searchTerm, callback) {
+  var update = {
+    "images": images,
+    "displayText": searchTerm,
+  };
+
+  app.device.publish(app.TOPIC_IMAGES, JSON.stringify(update), function() {
+    console.log("Published: \nTopic => " + app.TOPIC_IMAGES + "Data => " + JSON.stringify(update));
+    callback()
+  });
+}
+
+// Method that will accept an array of images and publish to AWS IoT
+app.changeModule = function(moduleName, turnOn, callback) {
   var update = {
     "moduleName": moduleName,
     "turnOn": turnOn,
@@ -67,9 +59,8 @@ app.changeModule = function(text, turnOn, response, speechOutput) {
 
   app.device.publish(app.TOPIC_MODULE, JSON.stringify(update), function() {
     console.log("Published: \nTopic => " + app.TOPIC_MODULE + "Data => " + JSON.stringify(update));
-    response.ask.call(response, speechOutput)
+    callback()
   });
 }
-
 
 module.exports = app
