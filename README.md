@@ -8,7 +8,7 @@ It is complementary to the Magic Mirror Module [Mirror Mirror On The Wall](https
 
 You need to setup an AWS IoT Device, and save the credentials locally in this repo. You can use the same credentials for the above complementary Magic Mirror Module.
 
-1. login to AWS Management Console
+1. login to __AWS Management Console__
 2. find __AWS IoT__ service
 3. click on __Connect__ at the left menu bar
 4. under _Configuring a device_, click on __Get Started__
@@ -22,13 +22,14 @@ You need to setup an AWS IoT Device, and save the credentials locally in this re
 
 ## Dependencies
 
+- [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) (installed via `npm install`)
 - [aws-iot-device-sdk](https://github.com/aws/aws-iot-device-sdk-js) (installed via `npm install`)
-- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in certs/cse.json, which should look like this:
+- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/cse.json__, which should look like this:
 
     ```
     {
-        "ID": "YOUR CSE ID",
-        "API_key": "YOUR API KEY"
+        "ID": "YOUR GOOGLE CUSTOM SEARCH ENGINE ID",
+        "API_key": "YOUR GOOGLE PROJECT API KEY"
     }
     ```
 
