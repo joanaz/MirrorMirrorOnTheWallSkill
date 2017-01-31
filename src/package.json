@@ -14,7 +14,8 @@
     "Alexa",
     "skill",
     "AWS IoT",
-    "device gateway"
+    "device gateway",
+    "Google Search Engine"
   ],
   "author": "Joanna Zhang",
   "contributors": "https://github.com/joanaz/MirrorMirrorOnTheWallSkill/graphs/contributors",
