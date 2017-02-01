@@ -1,5 +1,9 @@
 MirrorMirrorHelloIntent hello
 MirrorMirrorHelloIntent hi
+MirrorMirrorHelloIntent hey
+MirrorMirrorHelloIntent good morning
+MirrorMirrorHelloIntent good afternoon
+MirrorMirrorHelloIntent good evening
 ShowTextIntent say {hi|displayText}
 ShowTextIntent say {hello|displayText}
 ShowTextIntent say {hello everyone|displayText}
@@ -13,11 +17,11 @@ ShowImagesIntent show me pictures of {sea animals|searchTerm}
 ShowImagesIntent show me images of {octopus|searchTerm}
 ShowImagesIntent show pictures of {volcanoes|searchTerm}
 ShowImagesIntent show images of {birds|searchTerm}
-ShowImagesIntent show images of {Bill Gates|searchTerm}
+ShowImagesIntent show images of {bill gates|searchTerm}
 ShowImagesIntent display pictures of {animals|searchTerm}
 ShowImagesIntent display images of {rattle snakes|searchTerm}
 ShowImagesIntent find {hunter|searchTerm}
-ShowImagesIntent find {Snow White|searchTerm}
+ShowImagesIntent find {snow white|searchTerm}
 ShowImagesIntent find images of {sharks|searchTerm}
 ShowImagesIntent find images of {Elon Musk|searchTerm}
 ShowImagesIntent find pictures of {sharks|searchTerm}
