@@ -12,7 +12,7 @@ ShowTextIntent display text of {hello|displayText}
 ShowTextIntent display text of  {good morning|displayText}
 ShowTextIntent show text of {hello|displayText}
 ShowTextIntent show text of  {good morning|displayText}
-ShowImagesIntent show me {sharks|searchTerm}
+ShowImagesIntent show me {apples|searchTerm}
 ShowImagesIntent show me pictures of {sea animals|searchTerm}
 ShowImagesIntent show me images of {octopus|searchTerm}
 ShowImagesIntent show pictures of {volcanoes|searchTerm}
@@ -36,3 +36,14 @@ TurnOffModuleIntent close {smile test|moduleName}
 TurnOffModuleIntent turn off {smile test|moduleName}
 TurnOffModuleIntent turn off {compliments|moduleName}
 TurnOffModuleIntent finish {smile test|moduleName}
+ShowVideoIntent show me how to {draw|searchTermVideo}
+ShowVideoIntent show me how to {make slime|searchTermVideo}
+ShowVideoIntent show me video of {movie trailer|searchTermVideo}
+ShowVideoIntent show me a video of {sea animals|searchTermVideo}
+ShowVideoIntent show video of {volcanoes|searchTermVideo}
+ShowVideoIntent show a video of {birds|searchTermVideo}
+ShowVideoIntent display video of {animals|searchTermVideo}
+ShowVideoIntent display a video of {rattle snakes|searchTermVideo}
+ShowVideoIntent find video of {cat|searchTermVideo}
+ShowVideoIntent find video of {cat and dog|searchTermVideo}
+ShowVideoIntent find a video of {snow white|searchTermVideo}

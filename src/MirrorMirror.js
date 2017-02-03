@@ -5,7 +5,7 @@ var app = {}
 app.TOPIC_IMAGES = "MagicMirror:new-images"
 app.TOPIC_TEXT = "MagicMirror:new-text"
 app.TOPIC_MODULE = "MagicMirror:change-module"
-
+app.TOPIC_VIDEO = "MagicMirror:new-video"
 
 app.setup = function() {
   app.device = awsIot.device({
@@ -25,7 +25,7 @@ app.setup = function() {
   });
 }
 
-// Method that will accept an array of images and publish to AWS IoT
+// Method that will accept a text and publish to AWS IoT
 app.displayText = function(text, callback) {
   var update = {
     "displayText": text
@@ -50,7 +50,7 @@ app.showImages = function(images, searchTerm, callback) {
   });
 }
 
-// Method that will accept an array of images and publish to AWS IoT
+// Method that will accept a Magic Mirror Module name and publish to AWS IoT
 app.changeModule = function(moduleName, turnOn, callback) {
   var update = {
     "moduleName": moduleName,
@@ -59,6 +59,20 @@ app.changeModule = function(moduleName, turnOn, callback) {
 
   app.device.publish(app.TOPIC_MODULE, JSON.stringify(update), function() {
     console.log("Published: \nTopic => " + app.TOPIC_MODULE + "Data => " + JSON.stringify(update));
+    callback()
+  });
+}
+
+
+// Method that will accept a video ID and publish to AWS IoT
+app.showVideo = function(videoId, searchTerm, callback) {
+  var update = {
+    "videoId": videoId,
+    "displayText": searchTerm,
+  };
+
+  app.device.publish(app.TOPIC_VIDEO, JSON.stringify(update), function() {
+    console.log("Published: \nTopic => " + app.TOPIC_VIDEO + "Data => " + JSON.stringify(update));
     callback()
   });
 }

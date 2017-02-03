@@ -3,5 +3,5 @@ node_modules
 *.crt
 *.key
 *.pem
-**/cse.json
+**/keys.json
 *.zip

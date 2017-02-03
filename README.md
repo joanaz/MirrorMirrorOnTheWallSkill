@@ -24,15 +24,21 @@ You need to setup an AWS IoT Device, and save the credentials locally in this re
 
 - [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) (installed via `npm install`)
 - [aws-iot-device-sdk](https://github.com/aws/aws-iot-device-sdk-js) (installed via `npm install`)
-- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/cse.json__, which should look like this:
+- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/keys.json__ (see sample below).
+- [Youtube API](https://www.npmjs.com/package/youtube-node)(installed via `npm install`). Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see sample below).
 
-    ```
-    {
+### Sample keys.json
+```
+{
+    "cse": {
         "ID": "YOUR GOOGLE CUSTOM SEARCH ENGINE ID",
         "API_key": "YOUR GOOGLE PROJECT API KEY"
+    },
+    "youtube": {
+        "API_key": "YOUR YOUTUBE API KEY"
     }
-    ```
-
+}
+```
 
 ## Setup
 
@@ -114,6 +120,21 @@ The text in {} will be searched by Google Image Search API, and the returned ima
 - `"show images of {snow white}"`
 - `"display pictures of {dwarfs}"`
 - `"display images of {dwarfs}"`
+
+### Display video
+
+The text in {} will be searched by Youtube Data API, and the returned video will be displayed on Magic Mirror, with the text.
+
+- `"show me how to {make slime}"`
+- `"show me video of {movie trailer}"`
+- `"show me a video of {cats}"`
+- `"show video of {volcanoes}"`
+- `"show a video of {birds}"`
+- `"display video of {animals}"`
+- `"display a video of {rattle snakes}"`
+- `"find video of {cat}"`
+- `"find video of {cat and dog}"`
+- `"find a video of {snow white}"`
 
 ### Turn on/off Magic Mirror Modules
 

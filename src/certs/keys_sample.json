@@ -1,0 +1,9 @@
+{
+  "cse": {
+    "ID": "YOUR GOOGLE CUSTOM SEARCH ENGINE ID",
+    "API_key": "YOUR GOOGLE PROJECT API KEY"
+  },
+  "youtube": {
+    "API_key": "YOUR YOUTUBE API KEY"
+  }
+}

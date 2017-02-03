@@ -8,21 +8,25 @@
  *  Alexa: "Yes my Queen, showing images of Snow White."
  */
 
-var Alexa = require('alexa-sdk');
+const Alexa = require('alexa-sdk');
 
 /**
  * App ID for the skill
  * 
  * replace with your app ID 
  */
-var APP_ID = "amzn1.ask.skill.12001a25-5faa-4651-84dc-cd584a1c5ffa";
+const APP_ID = "amzn1.ask.skill.12001a25-5faa-4651-84dc-cd584a1c5ffa";
 
-var MirrorMirror = require('./MirrorMirror');
+const MirrorMirror = require('./MirrorMirror');
 MirrorMirror.setup();
 
-var GoogleImages = require('google-images');
-var cse = require("./certs/cse.json")
-var googleImages = new GoogleImages(cse.ID, cse.API_key)
+const Keys = require("./certs/keys.json");
+const GoogleImages = require('google-images');
+var googleImages = new GoogleImages(Keys.cse.ID, Keys.cse.API_key);
+
+const YouTube = require('youtube-node');
+var youTube = new YouTube();
+youTube.setKey(Keys.youtube.API_key);
 
 exports.handler = function(event, context, callback) {
     let alexa = Alexa.handler(event, context);
@@ -36,9 +40,8 @@ exports.handler = function(event, context, callback) {
 var languageStrings = {
     "en-US": {
         "translation": {
-            "SKILL_NAME": "Mirror Mirror On The Wall",
             "WELCOME_MESSAGE": "Hello my Queen, what can I do for you? ",
-            "WELCOME_REPROMT": "I can show you text and images, if you give me commands like 'say you are the fairest of them all' or 'find Snow White'. I can also open or close a magic mirror module, if you say commands like 'open compliments', or 'close weather forecast'. What can I do for you, my Queen?",
+            "WELCOME_REPROMPT": "I can show you text and images, if you give me commands like 'say you are the fairest of them all' or 'find Snow White'. I can also open or close a magic mirror module, if you say commands like 'open compliments', or 'close weather forecast'. What can I do for you, my Queen?",
             "CARD_TITLE": "MagicMirror: %s",
             "HELP_MESSAGE": "Hello my Queen, I can show you text and images, if you give me commands like 'say you are the fairest of them all' or 'find Snow White'. I can also open or close a magic mirror module, if you say commands like 'open compliments', or 'close weather forecast'. What can I do for you, my Queen?",
             "STOP_MESSAGE": "See you next time, my Queen!",
@@ -49,14 +52,15 @@ var languageStrings = {
             "TURN_ON_MODULE": "Yes, my Queen, opening module %s.",
             "TURN_ON_MODULE_ERR": "Sorry, my Queen, I didn't get that. You can give me commands like 'open current weather' or 'turn on compliments'. What can I do for you, my Queen?",
             "TURN_OFF_MODULE": "Yes, my Queen, closing module %s.",
-            "TURN_OFF_MODULE_ERR": "Sorry, my Queen, I didn't get that. You can give me commands like 'close current weather' or 'turn off compliments'. What can I do for you, my Queen?"
+            "TURN_OFF_MODULE_ERR": "Sorry, my Queen, I didn't get that. You can give me commands like 'close current weather' or 'turn off compliments'. What can I do for you, my Queen?",
+            "SHOW_VIDEO": "Yes, my Queen, showing a video of %s.",
+            "SHOW_VIDEO_ERR": "Sorry, my Queen, I didn't get that. You can give me commands like 'find a video of Snow White' or 'show me a video of Bill Gates'. What can I do for you, my Queen?"
         }
     },
     "en-GB": {
         "translation": {
-            "SKILL_NAME": "Mirror Mirror On The Wall",
             "WELCOME_MESSAGE": "Hello my Queen, what can I do for you? ",
-            "WELCOME_REPROMT": "I can show you text and images, if you give me commands like 'say you are the fairest of them all' or 'find Snow White'. I can also open or close a magic mirror module, if you say commands like 'open compliments', or 'close weather forecast'. What can I do for you, my Queen?",
+            "WELCOME_REPROMPT": "I can show you text and images, if you give me commands like 'say you are the fairest of them all' or 'find Snow White'. I can also open or close a magic mirror module, if you say commands like 'open compliments', or 'close weather forecast'. What can I do for you, my Queen?",
             "CARD_TITLE": "MagicMirror: %s",
             "HELP_MESSAGE": "Hello my Queen, I can show you text and images, if you give me commands like 'say you are the fairest of them all' or 'find Snow White'. I can also open or close a magic mirror module, if you say commands like 'open compliments', or 'close weather forecast'. What can I do for you, my Queen?",
             "STOP_MESSAGE": "See you next time, my Queen!",
@@ -67,7 +71,9 @@ var languageStrings = {
             "TURN_ON_MODULE": "Yes, my Queen, opening module %s.",
             "TURN_ON_MODULE_ERR": "Sorry, my Queen, I didn't get that. You can give me commands like 'open current weather' or 'turn on compliments'. What can I do for you, my Queen?",
             "TURN_OFF_MODULE": "Yes, my Queen, closing module %s.",
-            "TURN_OFF_MODULE_ERR": "Sorry, my Queen, I didn't get that. You can give me commands like 'close current weather' or 'turn off compliments'. What can I do for you, my Queen?"
+            "TURN_OFF_MODULE_ERR": "Sorry, my Queen, I didn't get that. You can give me commands like 'close current weather' or 'turn off compliments'. What can I do for you, my Queen?",
+            "SHOW_VIDEO": "Yes, my Queen, showing a video of %s.",
+            "SHOW_VIDEO_ERR": "Sorry, my Queen, I didn't get that. You can give me commands like 'find a video of Snow White' or 'show me a video of Bill Gates'. What can I do for you, my Queen?"
         }
     }
 };
@@ -80,7 +86,7 @@ var handlers = {
         this.emit('SayHello');
     },
     'SayHello': function() {
-        this.emit(':askWithCard', this.t("WELCOME_MESSAGE"), this.t("WELCOME_REPROMT"), this.t("CARD_TITLE", "Hello"), this.t("WELCOME_MESSAGE") + this.t("WELCOME_REPROMT"));
+        this.emit(':askWithCard', this.t("WELCOME_MESSAGE"), this.t("WELCOME_REPROMPT"), this.t("CARD_TITLE", "Hello"), this.t("WELCOME_MESSAGE") + this.t("WELCOME_REPROMPT"));
     },
     'AMAZON.HelpIntent': function() {
         this.emit(':askWithCard', this.t("HELP_MESSAGE"), this.t("HELP_MESSAGE"), this.t("CARD_TITLE", "Help"), this.t("HELP_MESSAGE"));
@@ -126,7 +132,6 @@ var handlers = {
                     alexa.emit(':tellWithCard', alexa.t("SHOW_IMAGE", searchTerm), alexa.t("CARD_TITLE", "ShowImage"), searchTerm, imageObj)
                 }
 
-                // Connect to AWS IoT & Send images
                 // Send publish attempt to AWS IoT
                 MirrorMirror.showImages(images, searchTerm, alexaEmit);
             })
@@ -160,6 +165,34 @@ var handlers = {
             MirrorMirror.changeModule(moduleName, false, alexaEmit);
         } else {
             this.emit(':askWithCard', this.t("TURN_OFF_MODULE_ERR"), this.t("TURN_OFF_MODULE_ERR"), this.t("CARD_TITLE", "CloseModuleError"), this.t("TURN_OFF_MODULE_ERR"))
+        }
+    },
+    'ShowVideoIntent': function() {
+        let searchTerm = this.event.request.intent.slots.searchTermVideo.value;
+        if (searchTerm) {
+            let alexa = this
+
+            // search for Youtube video
+            youTube.search(searchTerm, 1, function(error, result) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log(JSON.stringify(result, null, 2));
+
+                    let imageObj = {
+                        smallImageUrl: result.items[0].snippet.thumbnails.default.url,
+                        largeImageUrl: result.items[0].snippet.thumbnails.high.url
+                    };
+                    let alexaEmit = function() {
+                        alexa.emit(':tellWithCard', alexa.t("SHOW_VIDEO", searchTerm), alexa.t("CARD_TITLE", "ShowVideo"), searchTerm, imageObj)
+                    }
+
+                    // Send publish attempt to AWS IoT
+                    MirrorMirror.showVideo(result.items[0].id.videoId, searchTerm, alexaEmit);
+                }
+            });
+        } else {
+            this.emit(':askWithCard', this.t("SHOW_VIDEO_ERR"), this.t("SHOW_VIDEO_ERR"), this.t("CARD_TITLE", "ShowVideoError"), this.t("SHOW_VIDEO_ERR"))
         }
     }
 };

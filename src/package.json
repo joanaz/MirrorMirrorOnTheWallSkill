@@ -15,7 +15,8 @@
     "skill",
     "AWS IoT",
     "device gateway",
-    "Google Search Engine"
+    "Google Search Engine",
+    "Youtube"
   ],
   "author": "Joanna Zhang",
   "contributors": "https://github.com/joanaz/MirrorMirrorOnTheWallSkill/graphs/contributors",
@@ -27,6 +28,7 @@
   "dependencies": {
     "alexa-sdk": "latest",
     "aws-iot-device-sdk": "latest",
-    "google-images": "latest"
+    "google-images": "latest",
+    "youtube-node": "latest"
   }
 }
