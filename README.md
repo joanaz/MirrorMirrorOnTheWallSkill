@@ -15,7 +15,7 @@ You need to setup an AWS IoT Device, and save the credentials locally in this re
 5. choose __Linux/OSX__ platform, and __Node.JS__
 6. give your device a name
 7. download credentials and run the start.sh script, which will generate a root-CA.crt
-8. create a folder called __certs__ inside the src folder
+8. create a folder called __certs__ inside the __src__ folder
 9. place all the credentials in the __certs__ folder
 10. open MirrorMirror.js, replace the __keyPath__, __certPath__, and __caPath__ to your own
 
@@ -48,7 +48,7 @@ To run this skill you need to do two things:
 3. Choose __Blank Blueprint__
 4. Choose trigger __Alexa Skills Kit__, click "Next"
 5. Name the Lambda Function, select the runtime as __Node.js__
-6. Go to the __src__ directory, select all files and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
+6. Go to the __src__ directory, select all files and folders and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
 7. Select __Code entry type__ as "Upload a .ZIP file" and then upload the .zip file to the Lambda
 8. Keep the Handler as index.handler (this refers to the main js file in the zip).
 9. __Create new role from template__ and name it.

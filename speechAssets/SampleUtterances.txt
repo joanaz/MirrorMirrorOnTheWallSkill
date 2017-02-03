@@ -23,7 +23,7 @@ ShowImagesIntent display images of {rattle snakes|searchTerm}
 ShowImagesIntent find {hunter|searchTerm}
 ShowImagesIntent find {snow white|searchTerm}
 ShowImagesIntent find images of {sharks|searchTerm}
-ShowImagesIntent find images of {Elon Musk|searchTerm}
+ShowImagesIntent find images of {elon musk|searchTerm}
 ShowImagesIntent find pictures of {sharks|searchTerm}
 TurnOnModuleIntent open {compliments|moduleName}
 TurnOnModuleIntent open {smile test|moduleName}
