@@ -37,5 +37,9 @@
       "name": "searchTermVideo",
       "type": "AMAZON.LITERAL"
     }]
+  }, {
+    "intent": "TurnOnAllModuleIntent"
+  }, {
+    "intent": "TurnOffAllModuleIntent"
   }]
 }
