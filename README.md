@@ -38,7 +38,6 @@ You need to setup an AWS IoT Device, which is used for the communication between
 
 10. follow the instructions to run the start.sh script, which will generate a root-CA.crt
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.38.35.png)
-
     1.
     ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.05.png)
 
