@@ -41,7 +41,7 @@ You need to setup an AWS IoT Device, which is used for the communication between
 
     1. 
     ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.05.png)
-    
+
     2. 
     ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.21.png)
 
@@ -85,17 +85,44 @@ On your command line, navigate to the __certs__ folder, then enter `cp sample_ke
 ## 3. Deploy the Code in AWS Lambda
 
 1. Go inside your local __src__ directory, select all files and folders and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.32.02.png)
+
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.23.28.png)
+
 2. Go to the __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__ and click on the __Lambda__ link. Note: ensure you are in __us-east__ region or you won't be able to use Alexa with Lambda.
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.17.40.png)
+
 3. Click on the __Create a Lambda Function__ or __Get Started Now__ button.
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.18.03.png)
+
 4. Choose __Blank Blueprint__
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.18.14.png)
+
 5. Choose trigger __Alexa Skills Kit__, click "Next"
-6. Name the Lambda Function, select the runtime as __Node.js__
-7. Select __Code entry type__ as "Upload a .ZIP file" and then upload the .zip file from step 1 to the Lambda
-8. Keep the Handler as index.handler (this refers to the main js file in the zip).
-9. __Create new role from template__ and name it anything.
-10. Leave the Advanced settings as the defaults.
-11. Click "Next" and review the settings then click "Create Function"
-12. Copy the __ARN__ from the top right to be used later in the Alexa Skill Setup
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.19.14.png)
+
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.19.25.png)
+
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.19.30.png)
+
+6. Name the Lambda Function, (any name is fine), select the runtime as __Node.js__, select __Code entry type__ as "Upload a .ZIP file"
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.20.10.png)
+
+7. Click on __Upload__ button, then upload the zip file created in step 1 to Lambda
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.24.00.png)
+
+8. Keep the Handler as index.handler (this refers to the index.js file in the zip). __Create new role from template__ and name it anything.
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.24.41.png)
+
+9. Leave the Advanced settings as the defaults and click on "Next" 
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.24.50.png)
+
+10. Review the settings then click "Create Function"
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.24.58.png)
+
+11. Copy the __ARN__ from the top right to be used later in the Alexa Skill Setup
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.51.49.png)
+
 
 ## 4. Configure an Alexa Skill to Use Lambda
 
