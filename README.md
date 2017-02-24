@@ -11,28 +11,42 @@ You need to setup an AWS IoT Device, which is used for the communication between
 
 1. login to __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.53.40.png)
+
 2. choose US East region
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.13.43.png)
+
 3. find __AWS IoT__ service
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.53.45.png)
+
 4. click on __Connect__ at the left menu bar, under _Configuring a device_, click on __Get Started__
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.36.20.png)
+
 5. choose __Linux/OSX__ platform, and __Node.js__
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.36.38.png)
+
 6. click on __Get Started__
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.36.48)
-7. name your device "MagicMirror"
+
+7. name your device __MagicMirror__
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.37.35.png)
+
 8. download credentials, aka connection kit
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.38.03.png)
+
 9. click on __Next step__
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.38.26.png)
+
 10. follow the instructions to run the start.sh script, which will generate a root-CA.crt
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.38.35.png)
+
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.05.png)
+
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.21.png)
+
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.34.29.png)
+
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.35.20.png)
+
 11. copy all your credential files, then go to your local copy of this repo, and paste them inside the __certs__ folder (which is inside the __src__ folder)
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.43.51.png)
 
@@ -46,11 +60,12 @@ Dependencies are installed by navigating to your __src__ directory on command li
 - [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/keys.json__ (see sample_keys.json below).
 - [Youtube API](https://www.npmjs.com/package/youtube-node)(installed via `npm install`). Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see sample_keys.json below).
 
-### sample_keys.json
+### 2.1 sample_keys.json
 
 On your command line, navigate to the __certs__ folder, then enter `cp sample_keys.json keys.json`, which will create a copy of sample_keys.json called keys.json. Copy and paste your API keys obtained above in __keys.json__.
 
 ```
+\\ sample_keys.json 
 {
     "cse": {
         "ID": "YOUR GOOGLE CUSTOM SEARCH ENGINE ID",
