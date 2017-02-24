@@ -39,13 +39,17 @@ You need to setup an AWS IoT Device, which is used for the communication between
 10. follow the instructions to run the start.sh script, which will generate a root-CA.crt
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.38.35.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.05.png)
+    1.
+    ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.05.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.21.png)
+    2. 
+    ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.21.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.34.29.png)
+    3. 
+    ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.34.29.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.35.20.png)
+    4. 
+    ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.35.20.png)
 
 11. copy all your credential files, then go to your local copy of this repo, and paste them inside the __certs__ folder (which is inside the __src__ folder)
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.43.51.png)
@@ -65,7 +69,7 @@ Dependencies are installed by navigating to your __src__ directory on command li
 On your command line, navigate to the __certs__ folder, then enter `cp sample_keys.json keys.json`, which will create a copy of sample_keys.json called keys.json. Copy and paste your API keys obtained above in __keys.json__.
 
 ```javascript
-\\ sample_keys.json 
+// sample_keys.json 
 {
     "cse": {
         "ID": "YOUR GOOGLE CUSTOM SEARCH ENGINE ID",
