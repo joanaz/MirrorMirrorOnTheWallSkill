@@ -85,7 +85,7 @@ On your command line, navigate to the __certs__ folder, then enter `cp keys_samp
 ## 3. Deploy the Code in AWS Lambda
 
 1. Go inside your local __src__ directory, select all files and folders and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.32.02.png)
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 12.07.02.png)
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.23.28.png)
 
