@@ -3,7 +3,7 @@ An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for com
 
 It is complementary to the Magic Mirror Module [Mirror Mirror On The Wall](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall).
 
-Please follow the four steps below to setup and install this Alexa skill correctly.
+Please follow the steps below to setup and install this Alexa skill correctly.
 
 ## 1. Setup an AWS IoT Device
 
@@ -108,7 +108,7 @@ On your command line, navigate to the __certs__ folder, then enter `cp keys_samp
 6. Name the Lambda Function, (any name is fine), select the runtime as __Node.js__, select __Code entry type__ as "Upload a .ZIP file"
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.20.10.png)
 
-7. Click on __Upload__ button, then upload the zip file created in step 1 to Lambda
+7. Click on __Upload__ button, then upload the zip file created in Step 1 to Lambda
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 11.24.00.png)
 
 8. Keep the Handler as index.handler (this refers to the index.js file in the zip). __Create new role from template__ and name it anything.
@@ -126,15 +126,56 @@ On your command line, navigate to the __certs__ folder, then enter `cp keys_samp
 
 ## 4. Configure an Alexa Skill to Use Lambda
 
-1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and click __Add a New Skill__.
-2. Set "Mirror Mirror On The Wall" as the skill name and "on the wall" as the invocation name, this is what is used to activate your skill.
-3. Select the __Lambda ARN__ for the skill Endpoint and paste the ARN copied from above. Click Next.
+1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and __Get Started__ with __Alexa Skills Kit__
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.15.17.png)
+
+2. Click on the __Add a New Skill__ button on the right
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.15.37.png)
+
+3. Set "Mirror Mirror On The Wall" as the skill name, and "on the wall" as the invocation name, this is what is used to activate your skill
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.21.48.png)
+
 4. Copy the __Intent Schema__ from the included IntentSchema.json in the speechAssets folder.
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.22.21.png)
+
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.22.42.png)
+
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.23.14.png)
+
 5. Copy the __Sample Utterances__ from the included SampleUtterances.txt. Click Next.
-6. Go back to the skill Information tab and copy the appId. Paste the appId into the index.js file for the variable __APP_ID__, then update the Lambda source zip file with this change and __upload to Lambda__ again, this step makes sure the Lambda function only serves request from authorized source.
-7. You are now able to start testing your Alexa skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
-8. In order to test it, try to say some of the Sample Utterances from the Examples section below.
-9. You don't need to publish your skill.
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.23.26.png)
+
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.23.54.png)
+
+6. Select the __AWS Lambda ARN__ for the skill Endpoint, pick North America, and paste the ARN copied from Section 3 Step 11. Click Next.
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.24.55.png)
+
+7. You can test your Alexa skill by entering "hello" in the Service Simulator, click on the "Ask Mirror Mirror On The Wall" button, you should get a response as below
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.25.34.png)
+
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.25.50.png)
+
+8. Go back to the Skill Information tab and copy the __Application Id__. 
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.26.59.png)
+
+9. Paste the Application Id into the index.js file for the variable __APP_ID__, and save the change
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.27.21.png)
+
+10. Delete the zip file generated in Section 3 Step 1, and generate a new zip file using the same method. Upload the new zip file to Lambda. This step makes sure the Lambda function only serves request from an authorized source
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 15.28.21.png)
+
+You are now able to start testing your Alexa skill! You should be able to go to the [Amazon Alexa website](http://alexa.amazon.com/spa/index.html#skills/your-skills/?ref-suffix=ysa_gw) and see your skill enabled. 
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 16.27.28.png)
+
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 16.27.37.png)
+
+When you use your skill, you will see the relevant cards show up on the home page.
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-24 at 16.42.34.png)
+
+See the [Examples](#examples) section and the [List of Commands] (#list-of-commands) section below for commands you can say.
+
+*Note: You don't need to publish your Alexa skill, and you better not to publish your skill! Because otherwise your AWS IoT Device Gateway would be shared to other people, and their commands would show up on your mirror.
+
 
 ## Examples
 
@@ -153,8 +194,8 @@ Alexa: "Yes, my Queen. Hello."
 If you enabled the [complementary Magic Mirror Module](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall), the word "hello" will also be displayed on your Magic Mirror.
 
 
-## List of commands
-After you invoked this Alexa skill by saying `"Mirror Mirror On The Wall"`, you can say any of the following commands to trigger different actions on the Magic Mirror.
+## List of Commands
+After you invoked this Alexa skill, you can say any of the following commands to trigger different actions on the Magic Mirror.
 
 ### Display text
 
@@ -185,7 +226,7 @@ The text in {} will be searched by Google Image Search API, and the returned ima
 
 ### Display video
 
-The text in {} will be searched by Youtube Data API, and the returned video will be displayed on Magic Mirror, with the text.
+The text in {} will be searched by Youtube Data API, and the returned video will be played on Magic Mirror, with the text.
 
 - `"show me how to {make slime}"`
 - `"show me video of {movie trailer}"`
@@ -201,6 +242,8 @@ The text in {} will be searched by Youtube Data API, and the returned video will
 ### Turn on/off Magic Mirror Modules
 
 To turn on/off a Magic Mirror Module, it has to be installed and configured in the main project already. You also have to map its official module name to a transcribable spoken name in ModuleNames.json. For example, ["MMM-Globe"](https://github.com/LukeSkywalker92/MMM-Globe) maps to "globe", ["currentweather"](https://github.com/MichMich/MagicMirror/tree/master/modules/default/currentweather) maps to "current weather".
+
+*Note: To clear the text/images/video displayed by this module, you can simply turn this module off. The spoken name for this module is tentatively "magic mirror"*
 
 To turn on a Magic Mirror Module, say:
 - `"start {newsfeed}"`
