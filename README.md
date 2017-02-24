@@ -25,7 +25,7 @@ You need to setup an AWS IoT Device, which is used for the communication between
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.36.38.png)
 
 6. click on __Get Started__
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.36.48)
+![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.36.48.png)
 
 7. name your device __MagicMirror__
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.37.35.png)
@@ -64,7 +64,7 @@ Dependencies are installed by navigating to your __src__ directory on command li
 
 On your command line, navigate to the __certs__ folder, then enter `cp sample_keys.json keys.json`, which will create a copy of sample_keys.json called keys.json. Copy and paste your API keys obtained above in __keys.json__.
 
-```
+```javascript
 \\ sample_keys.json 
 {
     "cse": {
