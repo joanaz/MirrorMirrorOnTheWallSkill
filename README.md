@@ -39,7 +39,7 @@ You need to setup an AWS IoT Device, which is used for the communication between
 10. follow the instructions to run the start.sh script, which will generate a root-CA.crt
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 17.38.35.png)
 
-    1. 
+    1.
     ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/Screen Shot 2017-02-23 at 18.33.05.png)
 
     2. 
@@ -61,15 +61,15 @@ Dependencies are installed by navigating to your __src__ directory on command li
 
 - [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) (installed via `npm install`)
 - [aws-iot-device-sdk](https://github.com/aws/aws-iot-device-sdk-js) (installed via `npm install`)
-- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/keys.json__ (see sample_keys.json below).
-- [Youtube API](https://www.npmjs.com/package/youtube-node)(installed via `npm install`). Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see sample_keys.json below).
+- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/keys.json__ (see keys_sample.json below).
+- [Youtube API](https://www.npmjs.com/package/youtube-node)(installed via `npm install`). Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see keys_sample.json below).
 
-### 2.1 sample_keys.json
+### 2.1 keys_sample.json
 
-On your command line, navigate to the __certs__ folder, then enter `cp sample_keys.json keys.json`, which will create a copy of sample_keys.json called keys.json. Copy and paste your API keys obtained above in __keys.json__.
+On your command line, navigate to the __certs__ folder, then enter `cp keys_sample.json keys.json`, which will create a copy of keys_sample.json called keys.json. Copy and paste your API keys obtained above in __keys.json__.
 
 ```javascript
-// sample_keys.json 
+// keys_sample.json 
 {
     "cse": {
         "ID": "YOUR GOOGLE CUSTOM SEARCH ENGINE ID",
