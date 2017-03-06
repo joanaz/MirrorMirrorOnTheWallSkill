@@ -3,8 +3,6 @@ An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for com
 
 It is complementary to the Magic Mirror Module [Mirror Mirror On The Wall](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall).
 
-[card:joanaz/MMM-MirrorMirrorOnTheWall]
-
 Please follow the steps below to setup and install this Alexa skill correctly.
 
 ## 1. Setup an AWS IoT Device
