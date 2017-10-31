@@ -1,7 +1,9 @@
 # Mirror Mirror On The Wall Alexa Skill
 An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for communicating and controlling a [MagicMirror](https://github.com/MichMich/MagicMirror) using AWS IoT Device Gateway. 
 
+```
 It is complementary to the Magic Mirror Module [Mirror Mirror On The Wall](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall).
+```
 
 Please follow the steps below to setup and install this Alexa skill correctly.
 
