@@ -1,5 +1,5 @@
 # Mirror Mirror On The Wall Alexa Skill
-An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for communicating and controlling a [MagicMirror](https://github.com/MichMich/MagicMirror) using AWS IoT Device Gateway. 
+An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for communicating and controlling a [MagicMirror](https://github.com/MichMich/MagicMirror) using AWS IoT Device Gateway.
 
 
 # It is complementary to the Magic Mirror Module [Mirror Mirror On The Wall](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall).
@@ -11,46 +11,46 @@ Please follow the steps below to setup and install this Alexa skill correctly.
 
 You need to setup an AWS IoT Device, which is used for the communication between this Alexa skill and the Magic Mirror node app. The credentials you obtained through this process will also be used by the complementary Magic Mirror Module.
 
-1. login to __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
+1. Login to __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.53.40.png)
+![](Screenshots/2-AWSConsole.png)
 
-2. choose US East region
+2. Choose US East region
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.13.43.png)
+![](Screenshots/2.1-East.png)
 
-3. find __AWS IoT__ service
+3. Find __IoT Core__ service
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.53.45.png)
+![](Screenshots/2.2-IoTCore.png)
 
-4. click on __Connect__ at the left menu bar, under _Configuring a device_, click on __Get Started__
+4. Click on __Onboard__ at the left menu bar, under _Configuring a device_, click on __Get Started__
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.36.20.png)
+![](Screenshots/2.3-IotOnboard.png)
 
-5. choose __Linux/OSX__ platform, and __Node.js__
+5. Click on __Get Started__
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.36.38.png)
+![](Screenshots/2.4-IoTIntro.png)
 
-6. click on __Get Started__
+6. Choose __Linux/OSX__ platform, and __Node.js__
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.36.48.png)
+![](Screenshots/2.5-IoTPlatform.png)
 
-7. name your device __MagicMirror__
+7. Name your device __MagicMirror__
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.37.35.png)
+![](Screenshots/2.5-Register.png)
 
-8. download credentials, aka connection kit
+8. Download credentials, aka connection kit
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.03.png)
+![](Screenshots/2.6-DownloadKit.png)
 
-9. click on __Next step__
+9. Click on __Next step__
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.26.png)
 
-10. follow the instructions to run the start.sh script, which will generate a root-CA.crt
+10. Follow the instructions to run the start.sh script, which will generate a root-CA.crt
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.35.png)
-    
+
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.05.png)
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.21.png)
@@ -59,7 +59,7 @@ You need to setup an AWS IoT Device, which is used for the communication between
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.35.20.png)
 
-11. copy all your credential files, then go to your local copy of this repo, and paste them inside the __certs__ folder (which is inside the __src__ folder)
+11. Copy all your credential files, then go to your local copy of this repo, and paste them inside the __certs__ folder (which is inside the __src__ folder)
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.43.51.png)
 
@@ -78,7 +78,7 @@ Dependencies are installed by navigating to your __src__ directory on command li
 On your command line, navigate to the __certs__ folder, then enter `cp keys_sample.json keys.json`, which will create a copy of keys_sample.json called keys.json. Copy and paste your API keys obtained above in __keys.json__.
 
 ```javascript
-// keys_sample.json 
+// keys_sample.json
 {
     "cse": {
         "ID": "YOUR GOOGLE CUSTOM SEARCH ENGINE ID",
@@ -101,100 +101,86 @@ On your command line, navigate to the __certs__ folder, then enter `cp keys_samp
 
 2. Go to the __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__ and click on the __Lambda__ link. Note: ensure you are in __us-east__ region or you won't be able to use Alexa with Lambda.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.17.40.png)
+![](Screenshots/2.11-Lambda.png)
 
-3. Click on the __Create a Lambda Function__ or __Get Started Now__ button.
+3. Click on the __Create a Function__ button.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.18.03.png)
+![](Screenshots/2.12-CreateFun.png)
 
-4. Choose __Blank Blueprint__
+4. Choose __Author from scratch__. Name the function (any name is fine). Keep the Handler as index.handler (this refers to the index.js file in the zip). __Create new role from template__ and name it anything. Click on the __Create function__ button.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.18.14.png)
+![](Screenshots/2.13-createFun.png)
 
-5. Choose trigger __Alexa Skills Kit__, click "Next"
+![](Screenshots/2.13-role.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.19.14.png)
+5. Choose trigger __Alexa Skills Kit__ from the left. Disable Skill ID Verification. Click __Add__. Then scroll up and click __Save__.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.19.25.png)
+![](Screenshots/2.14-LambdaSuccess.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.19.30.png)
+![](Screenshots/2.15-ASK.png)
 
-6. Name the Lambda Function, (any name is fine), select the runtime as __Node.js__, select __Code entry type__ as "Upload a .ZIP file"
+![](Screenshots/2.16-Triggers.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.20.10.png)
+![](Screenshots/2.17-Save.png)
 
-7. Click on __Upload__ button, then upload the zip file created in Step 1 to Lambda
+6. With your Lambda function selected, select __Code entry type__ as "Upload a .ZIP file"
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.24.00.png)
+![](Screenshots/2.18-UploadCode.png)
 
-8. Keep the Handler as index.handler (this refers to the index.js file in the zip). __Create new role from template__ and name it anything.
+7. Click on __Upload__ button, then upload the zip file created in Step 1 to Lambda. Then __Save__.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.24.41.png)
+![](Screenshots/2.19-Save.png)
 
-9. Leave the Advanced settings as the defaults and click on "Next" 
-
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.24.50.png)
-
-10. Review the settings then click "Create Function"
-
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.24.58.png)
-
-11. Copy the __ARN__ from the top right to be used later in the Alexa Skill Setup
-
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.51.49.png)
+8. Copy the __ARN__ from the top right to be used later in the Alexa Skill Setup
 
 
 ## 4. Configure an Alexa Skill to Use Lambda
 
-1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and __Get Started__ with __Alexa Skills Kit__
+1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and click on __Alexa Skills Kit__
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.15.17.png)
+![](Screenshots/2.20-ASK.png)
 
-2. Click on the __Add a New Skill__ button on the right
+2. Click on the __Create Skill__ button.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.15.37.png)
+![](Screenshots/2.21-Create.png)
 
-3. Set "Mirror Mirror On The Wall" as the skill name, and "on the wall" as the invocation name, this is what is used to activate your skill
+3. Set "Mirror Mirror On The Wall" as the skill name and click the __Create a skill__ button.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.21.48.png)
+![](Screenshots/2.22-CreateSkill.png)
 
-4. Copy the __Intent Schema__ from the included IntentSchema.json in the speechAssets folder.
+4. Set "on the wall" as the invocation name. This is what is used to activate your skill.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.22.21.png)
+![](Screenshots/2.24-Invocation.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.22.42.png)
+5. Copy the __Interaction Model__ from the included InteractionModel.json in the speechAssets folder.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.23.14.png)
+![](Screenshots/2.25-Intents.png)
 
-5. Copy the __Sample Utterances__ from the included SampleUtterances.txt. Click Next.
+6. Select the __AWS Lambda ARN__ for the skill Endpoint and paste the ARN copied from Section 3 Step 8. Click __Save Endpoints__.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.23.26.png)
+![](Screenshots/2.28-SavedEndpoint.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.23.54.png)
+7. Click __Build Model__ on the main page if not already built.
 
-6. Select the __AWS Lambda ARN__ for the skill Endpoint, pick North America, and paste the ARN copied from Section 3 Step 11. Click Next.
+![](Screenshots/2.29-Build.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.24.55.png)
+8. You can test your Alexa skill by entering invoking it in the Test tab.
 
-7. You can test your Alexa skill by entering "hello" in the Service Simulator, click on the "Ask Mirror Mirror On The Wall" button, you should get a response as below
+![](Screenshots/2.30-Test.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.25.34.png)
+9. Click __Your Skills__ at the top. In the skills list, click __View Skill ID__ under MirrorMirrorOnTheWall and copy it.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.25.50.png)
+![](Screenshots/2.31-SkillID.png)
 
-8. Go back to the Skill Information tab and copy the __Application Id__. 
-
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.26.59.png)
-
-9. Paste the Application Id into the index.js file for the variable __APP_ID__, and save the change
+10. Paste the Application Id into the index.js file for the variable __APP_ID__, and save the change
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.27.21.png)
 
-10. Delete the zip file generated in Section 3 Step 1, and generate a new zip file using the same method. Upload the new zip file to Lambda. This step makes sure the Lambda function only serves request from an authorized source
+11. Delete the zip file generated in Section 3 Step 1, and generate a new zip file using the same method. Upload the new zip file to Lambda. This step makes sure the Lambda function only serves request from an authorized source
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.28.21.png)
 
-You are now able to start testing your Alexa skill! You should be able to go to the [Amazon Alexa website](http://alexa.amazon.com/spa/index.html#skills/your-skills/?ref-suffix=ysa_gw) and see your skill enabled. 
+You are now able to start testing your Alexa skill! You should be able to go to the [Amazon Alexa website](http://alexa.amazon.com/spa/index.html#skills/your-skills/?ref-suffix=ysa_gw) and see your skill enabled.
 
 ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at16.27.28.png)
 
