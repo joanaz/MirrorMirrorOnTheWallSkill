@@ -78,7 +78,6 @@ On your command line, navigate to the __certs__ folder, then enter `cp keys_samp
 ## 3. Deploy the Code in AWS Lambda
   1. Go inside your local __src__ directory, select all files and folders and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at12.07.02.png)
-
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.23.28.png)
 
   1. Go to the __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__ and click on the __Lambda__ link. Note: ensure you are in __us-east__ region or you won't be able to use Alexa with Lambda.
@@ -89,16 +88,12 @@ On your command line, navigate to the __certs__ folder, then enter `cp keys_samp
 
   1. Choose __Author from scratch__. Name the function (any name is fine). Keep the Handler as index.handler (this refers to the index.js file in the zip). __Create new role from template__ and name it anything. Click on the __Create function__ button.
   ![](Screenshots/2.13-createFun.png)
-
   ![](Screenshots/2.13-role.png)
 
   1. Choose trigger __Alexa Skills Kit__ from the left. Disable Skill ID Verification. Click __Add__. Then scroll up and click __Save__.
   ![](Screenshots/2.14-LambdaSuccess.png)
-
   ![](Screenshots/2.15-ASK.png)
-
   ![](Screenshots/2.16-Triggers.png)
-
   ![](Screenshots/2.17-Save.png)
 
   1. With your Lambda function selected, select __Code entry type__ as "Upload a .ZIP file"
