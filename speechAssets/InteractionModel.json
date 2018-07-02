@@ -1,0 +1,237 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "on the wall",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "MirrorMirrorHelloIntent",
+                    "slots": [],
+                    "samples": [
+                        "good evening",
+                        "good afternoon",
+                        "good morning",
+                        "hey",
+                        "hi",
+                        "hello"
+                    ]
+                },
+                {
+                    "name": "ShowTextIntent",
+                    "slots": [
+                        {
+                            "name": "displayText",
+                            "type": "AMAZON.LITERAL"
+                        }
+                    ],
+                    "samples": [
+                        "say {hi|displayText}",
+                        "say {hello|displayText}",
+                        "say {hello everyone|displayText}",
+                        "say {good morning|displayText}",
+                        "say {good morning to you|displayText}",
+                        "say {how are you doing|displayText}",
+                        "display text of {hello|displayText}",
+                        "display text of {good morning|displayText}",
+                        "show text of {hello|displayText}",
+                        "show text of  {good morning|displayText}"
+                    ]
+                },
+                {
+                    "name": "TurnOnModuleIntent",
+                    "slots": [
+                        {
+                            "name": "moduleName",
+                            "type": "AMAZON.LITERAL"
+                        }
+                    ],
+                    "samples": [
+                        "open {compliments|moduleName}",
+                        "open {calendar|moduleName}",
+                        "open {current weather|moduleName}",
+                        "open {smile test|moduleName}",
+                        "open module {compliments|moduleName} ",
+                        "open module {calendar|moduleName}",
+                        "open module {current weather|moduleName}",
+                        "open module {smile test|moduleName} ",
+                        "show {compliments|moduleName}",
+                        "show {calendar|moduleName}",
+                        "show {current weather|moduleName}",
+                        "show {smile test|moduleName}",
+                        "show module {compliments|moduleName} ",
+                        "show module {calendar|moduleName}",
+                        "show module {current weather|moduleName}",
+                        "show module {smile test|moduleName} ",
+                        "turn on {compliments|moduleName}",
+                        "turn on {calendar|moduleName}",
+                        "turn on {current weather|moduleName}",
+                        "turn on {smile test|moduleName}",
+                        "turn on module {compliments|moduleName} ",
+                        "turn on module {calendar|moduleName}",
+                        "turn on module {current weather|moduleName}",
+                        "turn on module {smile test|moduleName} ",
+                        "start {compliments|moduleName}",
+                        "start {calendar|moduleName}",
+                        "start {current weather|moduleName}",
+                        "start {smile test|moduleName}",
+                        "start module {compliments|moduleName} ",
+                        "start module {calendar|moduleName}",
+                        "start module {current weather|moduleName}",
+                        "start module {smile test|moduleName}"
+                    ]
+                },
+                {
+                    "name": "TurnOnAllModuleIntent",
+                    "slots": [],
+                    "samples": [
+                        "open all",
+                        "open all modules",
+                        "open every module",
+                        "open each module",
+                        "show all modules",
+                        "show me all modules",
+                        "show every module",
+                        "show each module",
+                        "turn on all",
+                        "turn on all modules",
+                        "turn on every module",
+                        "turn on each module",
+                        "start all",
+                        "start all modules",
+                        "start every module",
+                        "start each module"
+                    ]
+                },
+                {
+                    "name": "TurnOffAllModuleIntent",
+                    "slots": [],
+                    "samples": [
+                        "close all",
+                        "close all modules",
+                        "close every module",
+                        "close each module",
+                        "hide all",
+                        "hide all modules",
+                        "hide every module",
+                        "hide each module",
+                        "turn off all",
+                        "turn off all modules",
+                        "turn off every module",
+                        "turn off each module"
+                    ]
+                },
+                {
+                    "name": "TurnOffModuleIntent",
+                    "slots": [
+                        {
+                            "name": "moduleName",
+                            "type": "AMAZON.LITERAL"
+                        }
+                    ],
+                    "samples": [
+                        "close {compliments|moduleName}",
+                        "close {calendar|moduleName}",
+                        "close {current weather|moduleName}",
+                        "close {smile test|moduleName}",
+                        "close module {compliments|moduleName} ",
+                        "close module {calendar|moduleName}",
+                        "close module {current weather|moduleName}",
+                        "close module {smile test|moduleName} ",
+                        "hide {compliments|moduleName}",
+                        "hide {calendar|moduleName}",
+                        "hide {current weather|moduleName}",
+                        "hide {smile test|moduleName}",
+                        "hide module {compliments|moduleName} ",
+                        "hide module {calendar|moduleName}",
+                        "hide module {current weather|moduleName}",
+                        "hide module {smile test|moduleName} ",
+                        "turn off {compliments|moduleName}",
+                        "turn off {calendar|moduleName}",
+                        "turn off {current weather|moduleName}",
+                        "turn off {smile test|moduleName}",
+                        "turn off module {compliments|moduleName}",
+                        "turn off module {calendar|moduleName}",
+                        "turn off module {current weather|moduleName}",
+                        "turn off module {smile test|moduleName}"
+                    ]
+                },
+                {
+                    "name": "ShowImagesIntent",
+                    "slots": [
+                        {
+                            "name": "searchTerm",
+                            "type": "AMAZON.LITERAL"
+                        }
+                    ],
+                    "samples": [
+                        "find {hunter|searchTerm}",
+                        "find {queen|searchTerm}",
+                        "find {snow white|searchTerm}",
+                        "find {seven dwarfs|searchTerm}",
+                        "find images of {sharks|searchTerm}",
+                        "find images of {elon musk|searchTerm}",
+                        "find pictures of {sharks|searchTerm}",
+                        "show me {apples|searchTerm}",
+                        "show me pictures of {sea animals|searchTerm}",
+                        "show me images of {octopus|searchTerm}",
+                        "show pictures of {volcanoes|searchTerm}",
+                        "show images of {birds|searchTerm}",
+                        "show images of {bill gates|searchTerm}",
+                        "display pictures of {animals|searchTerm}",
+                        "display images of {rattle snakes|searchTerm}"
+                    ]
+                },
+                {
+                    "name": "ShowVideoIntent",
+                    "slots": [
+                        {
+                            "name": "searchTermVideo",
+                            "type": "AMAZON.LITERAL"
+                        }
+                    ],
+                    "samples": [
+                        "show me how to {draw|searchTermVideo}",
+                        "show me how to {paint|searchTermVideo}",
+                        "show me how to {make slime|searchTermVideo}",
+                        "show me how to {unlock locks|searchTermVideo}",
+                        "show me video of {apples|searchTermVideo}",
+                        "show me video of {bananas|searchTermVideo}",
+                        "show me video of {movie trailer|searchTermVideo}",
+                        "show me video of {video games|searchTermVideo}",
+                        "show me a video of {sea animals|searchTermVideo}",
+                        "show video of {volcanoes|searchTermVideo}",
+                        "show video of {seabeds|searchTermVideo}",
+                        "show a video of {eagles|searchTermVideo}",
+                        "show a video of {birds|searchTermVideo}",
+                        "display video of {animals|searchTermVideo}",
+                        "display a video of {rattle snakes|searchTermVideo}",
+                        "find video of {cats|searchTermVideo}",
+                        "find video of {dogs|searchTermVideo}",
+                        "find video of {lego superman|searchTermVideo}",
+                        "find video of {lego batman|searchTermVideo}",
+                        "find video of {cat and dog|searchTermVideo}",
+                        "find video of {apple and orange|searchTermVideo}",
+                        "find a video of {snow white|searchTermVideo}",
+                        "find a video of {evil queen|searchTermVideo}"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
