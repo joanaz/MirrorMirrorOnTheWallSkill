@@ -7,9 +7,9 @@ An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for com
 Please follow the [steps](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/) to setup and install this Alexa skill:
 
 1. [Setup an AWS IoT Device](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/#1-setup-an-aws-iot-device)
-2. [Install Dependencies](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/#1-setup-an-aws-iot-device)
-3. [Deploy the Code in AWS Lambda](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/#1-setup-an-aws-iot-device)
-4. [Configure an Alexa Skill to Use Lambda](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/#1-setup-an-aws-iot-device)
+2. [Install Dependencies](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/#2-install-dependencies)
+3. [Deploy the Code in AWS Lambda](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/#3-deploy-the-code-in-aws-lambda)
+4. [Configure an Alexa Skill to Use Lambda](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/#4-configure-an-alexa-skill-to-use-lambda)
 
 ## Examples
 
