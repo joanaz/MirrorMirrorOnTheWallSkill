@@ -116,7 +116,7 @@ On your command line, navigate to the __certs__ folder, then enter `cp keys_samp
   1. Set "Mirror Mirror On The Wall" as the skill name and click the __Create a skill__ button.
   ![](Screenshots/2.22-CreateSkill.png)
 
-  1. Set "on the wall" as the invocation name. This is what is used to activate your skill.
+  1. Set "mirror mirror on the wall" as the invocation name. This is what is used to activate your skill.
   ![](Screenshots/2.24-Invocation.png)
 
   1. Copy the __Interaction Model__ from the included InteractionModel.json in the speechAssets folder.
