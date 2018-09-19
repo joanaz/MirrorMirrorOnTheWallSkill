@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "on the wall",
+            "invocationName": "magic mirror",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
