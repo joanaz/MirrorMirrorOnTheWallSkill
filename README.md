@@ -102,15 +102,10 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
 
 1. Follow the instructions to run the start.sh script, which will generate a root-CA.crt
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.35.png)
-  
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.05.png)
-  
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.21.png)
-  
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.34.29.png)
-  
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.35.20.png)
-  
   *_Note: Don’t worry about errors as long as you get a root-CA.crt file_
   *_Note note: You will need to copy the credential files here for Lambda function deployment later_
 
