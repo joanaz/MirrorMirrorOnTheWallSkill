@@ -115,12 +115,11 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
   	- _Note note: You will need to copy the credential files here for Lambda function deployment later_
 
 1. Go back to the AWS web page, click on Done
-  ![](???)
 
 1. Open the MagicMirror Thing you just created
   ![](???)
   
-1. Click on Interact on the left menu bar, see the HTTPS Rest API Endpoint in the format of `xxxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com`? You will need to copy this endpoint for Lambda function deployment later
+1. Click on Interact on the left menu bar, see the __HTTPS Rest API Endpoint__ in the format of `xxxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com`? You will need to copy this endpoint for Lambda function deployment later
   ![](???)
   
 
