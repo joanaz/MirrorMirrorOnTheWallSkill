@@ -1,6 +1,5 @@
 # Mirror Mirror On The Wall
-
-> Build your own voice-controlled Magic Mirror
+# Build your own voice-controlled Magic Mirror
 
 ## System Overview
 
@@ -11,7 +10,7 @@
 - [Amazon AWS developer account](https://aws.amazon.com/free/)
 - [Alexa Skills developer account](https://developer.amazon.com/alexa-skills-kit)
 - Install [Node.js v10.x](https://nodejs.org/en/)
-- *Install [Git] (https://git-scm.com/downloads)
+- *Install [Git](https://git-scm.com/downloads)
 
 *Windows users: 
 You must have a Linux Bash Shell to do this Workshop. When you are installing Git, please follow these instructions (https://learn.adafruit.com/windows-tools-for-the-electrical-engineer/git-plus-command-line-tools) to use the Unix tools from the Windows Command Prompt.
@@ -26,16 +25,27 @@ We are using an open source MagicMirror² software platform that will allow you 
 
 ### Installation
 1. Open your command line
+
 2. Download the repository to your laptop
+
 `git clone https://github.com/MichMich/MagicMirror.git`
-3. Enter the repository: 
+
+3. Enter the repository
+
 `cd MagicMirror/`
-4. Install node libraries: 
+
+4. Install node libraries
+
 `npm install`
+
 5. Navigate to the config folder and rename config.js.sample to config.js
-`cd config/
-mv config.js.sample config.js`
-6. Run the app:
+
+`cd config/`
+
+`mv config.js.sample config.js`
+
+6. Run the app
+
 `npm start`
 
 
