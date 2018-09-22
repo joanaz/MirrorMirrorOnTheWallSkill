@@ -95,19 +95,17 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.21.png)
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.34.29.png)
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.35.20.png)
-
-  *Note: Don’t worry about errors as long as you get a root-CA.crt file
-  
-  *Note note: You will need to copy the credential files here for Lambda function deployment later
+  *_Note: Don’t worry about errors as long as you get a root-CA.crt file_
+  *_Note note: You will need to copy the credential files here for Lambda function deployment later_
 
   1. Go back to the AWS web page, click on Done
-  SCREENSHOT
+  ![SCREENSHOT]()
 
   1. Open the MagicMirror Thing you just created
-  SCREENSHOT
+  ![SCREENSHOT]()
   
   1. Click on Interact on the left menu bar, see the HTTPS Rest API Endpoint in the format of `xxxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com`? You will need to copy this endpoint for Lambda function deployment later
-  SCREENSHOT
+  ![SCREENSHOT]()
   
 
 ## Alexa Skill
@@ -116,8 +114,7 @@ In this section, we build the language model for our Alexa Skill by defining the
 
 ### Configuration
 
-  1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and click on __Alexa Skills Kit__
-  ![](Screenshots/2.20-ASK.png)
+  1. Go to the [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask)
 
   1. Click on the __Create Skill__ button.
   ![](Screenshots/2.21-Create.png)
