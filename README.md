@@ -101,13 +101,18 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.26.png)
 
 1. Follow the instructions to run the start.sh script, which will generate a root-CA.crt
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.35.png)
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.05.png)
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.21.png)
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.34.29.png)
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.35.20.png)
-  - _Note: Don’t worry about errors as long as you get a root-CA.crt file_
-  - _Note note: You will need to copy the credential files here for Lambda function deployment later_
+  	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.35.png)
+	
+  	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.05.png)
+		
+  	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.21.png)
+		
+  	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.34.29.png)
+		
+  	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.35.20.png)
+		
+  	- _Note: Don’t worry about errors as long as you get a root-CA.crt file_
+  	- _Note note: You will need to copy the credential files here for Lambda function deployment later_
 
 1. Go back to the AWS web page, click on Done
   ![](???)
@@ -158,19 +163,19 @@ In this section, we build the language model for our Alexa Skill by defining the
 
 1. Download the GitHub repository to your laptop
  
-`git clone https://github.com/joanaz/MirrorMirrorOnTheWallSkill.git`
+	`git clone https://github.com/joanaz/MirrorMirrorOnTheWallSkill.git`
 
 1. Install node libraries
  
-`cd MirrorMirrorOnTheWallSkill/src/`
+	`cd MirrorMirrorOnTheWallSkill/src/`
  
-`npm install`
+	`npm install`
 
 1. Navigate to the certs folder and rename keys_sample.json to keys.json
  
-`cd certs/`
+	`cd certs/`
  
-`mv keys_sample.json keys.json`
+	`mv keys_sample.json keys.json`
 
 1. Copy the credential files from [Section AWS IoT](???). Then open the local MirrorMirrorOnTheWallSkill folder you downloaded, go to src, then certs, paste your credential files here
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.43.51.png)
@@ -180,10 +185,6 @@ In this section, we build the language model for our Alexa Skill by defining the
 
 1. Open index.js in src folder with a text editor. Copy and paste your __Alexa Skill ID__ to line 18 for the variable __APP_ID__, replacing `amzn1.ask.skill.YOURALEXASKILLID`, and save the change
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.27.21.png)
-
-  1. Click __Your Skills__ at the top. In the skills list, click __View Skill ID__ under MirrorMirrorOnTheWall and copy it.
-  ![](Screenshots/2.31-SkillID.png)
-
 
   
 ### Dependencies
