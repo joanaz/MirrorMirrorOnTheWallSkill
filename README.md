@@ -1,6 +1,6 @@
 # Mirror Mirror On The Wall
 
-> ## Build your own voice-controlled Magic Mirror
+> ### Build your own voice-controlled Magic Mirror
 
 ## System Overview
 
