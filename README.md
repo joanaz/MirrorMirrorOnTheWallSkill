@@ -13,7 +13,7 @@
 - [Alexa Skill]()
   - [Configuration]()
 - [AWS Lambda]()
-  - [Get code reday]()
+  - [Get Lambda Function code ready]()
   - [Deploy to Lambda]()
 - [Magic Mirror Module]()
 
@@ -68,13 +68,13 @@ To toggle the (web) Developer Tools from mirror mode, use `CTRL-SHIFT-I` or `ALT
 
 We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an Alexa Skill to send messages to it and a Magic Mirror to subscribe to new messages from it. This will let us control our Magic Mirror with our voice. 
  
-  1. Login to __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
+1. Login to __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
   ![](Screenshots/2-AWSConsole.png)
 
-  1. Choose __US East (N. Virginia)__ region
+1. Choose __US East (N. Virginia)__ region
   ![](Screenshots/2.1-East.png)
 
-  1. Find __IoT Core__ service
+1. Find __IoT Core__ service
   ![](Screenshots/2.2-IoTCore.png)
 
   1. Click on __Onboard__ at the left menu bar, under _Configuring a device_, click on __Get Started__
