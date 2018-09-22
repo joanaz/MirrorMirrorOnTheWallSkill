@@ -2,6 +2,13 @@
 
 > ### Build your own voice-controlled Magic Mirror
 
+1. [Prerequisites]()
+1. [Magic Mirror]()
+1. [AWS IoT Core]()
+1. [Alexa Skill]()
+1. [AWS Lambda]()
+1. [Magic Mirror Module]()
+
 ![](Screenshots/systemoverview.png)
 
 ## Prerequisites
@@ -49,7 +56,7 @@ We are using an open source MagicMirror² software platform that will allow you 
 
 
 
-## AWS IoT Device
+## AWS IoT Core
 
 You need to setup an AWS IoT Device, which is used for the communication between this Alexa skill and the Magic Mirror node app. The credentials you obtained through this process will also be used by the complementary Magic Mirror Module.
 
