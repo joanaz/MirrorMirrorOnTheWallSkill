@@ -47,19 +47,25 @@ To toggle the (web) Developer Tools from mirror mode, use `CTRL-SHIFT-I` or `ALT
 1. Open your command line
 
 1. Download the repository to your laptop
+
 `git clone https://github.com/MichMich/MagicMirror.git`
 
 1. Enter the repository
+
 `cd MagicMirror/`
 
 1. Install node libraries
+
 `npm install`
 
 1. Navigate to the config folder and rename config.js.sample to config.js
+
 `cd config/`
+
 `mv config.js.sample config.js`
 
 1. Run the app
+
 `npm start`
 
 
