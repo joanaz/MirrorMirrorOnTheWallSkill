@@ -319,7 +319,7 @@ We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirr
 
 ## Have Fun!
 
-### Now you have completed all the steps! Congratulations! 
+_### Now you have completed all the steps! Congratulations!_
 
 You can invoke your Alexa skill by saying `Alexa, start Magic Mirror`. Next, you can say any of the following commands to trigger different actions on your Magic Mirror.
 
@@ -336,7 +336,7 @@ The text in {} will be displayed on Magic Mirror in bold.
 
 ### Turn on/off Magic Mirror Modules
 
-To turn on/off a Magic Mirror Module, it has to already be installed and configured in MagicMirror². You also have to map its official module name to a transcribable spoken name in ModuleNames.json. For example, we can map "MMM-Globe" (https://github.com/LukeSkywalker92/MMM-Globe ) to "globe", or "currentweather" (https://github.com/MichMich/MagicMirror/tree/master/modules/default/currentweather) to "current weather".
+To turn on/off a Magic Mirror Module, it has to already be installed and configured in MagicMirror². You also have to map its official module name to a transcribable spoken name in ModuleNames.json. For example, we can map ["MMM-Globe"](https://github.com/LukeSkywalker92/MMM-Globe ) to "globe", or ["currentweather"](https://github.com/MichMich/MagicMirror/tree/master/modules/default/currentweather) to "current weather".
 
 To turn on a Magic Mirror Module, say:
 - "start {newsfeed}"
@@ -350,7 +350,7 @@ To turn off a Magic Mirror Module, say:
 - "turn off {compliments}"
 - "finish {smile test}"
 
-Note: To clear the text/images/video displayed by this module, you can simply turn this module off.
+_Note: To clear the text/images/video displayed by this module, you can simply turn this module off._
 
 To turn on all Magic Mirror Module, say:
 - "open all"
