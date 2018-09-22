@@ -159,7 +159,11 @@ In this section, we build the language model for our Alexa Skill by defining the
 
 ## AWS Lambda
 
-### Get Lambda Function code ready
+> ### repo: https://github.com/joanaz/MirrorMirrorOnTheWallSkill
+
+In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lambda function processes our voice commands and tells Alexa how to respond, and sends our commands to the AWS IoT Device Gateway.
+
+### Get Lambda function code ready
 
 1. Download the GitHub repository to your laptop
  
@@ -177,7 +181,7 @@ In this section, we build the language model for our Alexa Skill by defining the
  
 	`mv keys_sample.json keys.json`
 
-1. Copy the credential files from [Section AWS IoT](???). Then open the local MirrorMirrorOnTheWallSkill folder you downloaded, go to src, then certs, paste your credential files here
+1. Copy the credential files generated in [Section AWS IoT](???). Then open the local MirrorMirrorOnTheWallSkill folder you downloaded, go to src, then certs, paste your credential files here
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.43.51.png)
 
 1. Open MirrorMirror.js in src folder with a text editor. Copy and paste your __HTTPS Rest API Endpoint__ to line 17, replacing `YOURID.iot.us-east-1.amazonaws.com`
@@ -189,16 +193,18 @@ In this section, we build the language model for our Alexa Skill by defining the
   
 ### Dependencies
 
-Dependencies are installed by navigating to your __src__ directory on command line, and enter `npm install`.
+Here’s the list of node libraries you installed in the above step. If you are interested in learning more about them, you can go and check out their links.
 
-- [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) (installed via `npm install`)
-- [aws-iot-device-sdk](https://github.com/aws/aws-iot-device-sdk-js) (installed via `npm install`)
-- [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/keys.json__ (see keys_sample.json below).
-- [Youtube API](https://www.npmjs.com/package/youtube-node)(installed via `npm install`). Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see keys_sample.json below).
+- [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) 
+- [aws-iot-device-sdk](https://github.com/aws/aws-iot-device-sdk-js) 
+- [Google Images Search](https://www.npmjs.com/package/google-images)
+	OPTIONAL: It is for showing images on the Magic Mirror. Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/keys.json__ (see keys.json below).
+- [Youtube API](https://www.npmjs.com/package/youtube-node). 
+	OPTIONAL: It is for showing a video on the Magic Mirror. Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see keys.json below).
 
 ### keys.json
 
-On your command line, navigate to the __certs__ folder, then enter `cp keys_sample.json keys.json`, which will create a copy of keys_sample.json called keys.json. Copy and paste your API keys obtained above in __keys.json__.
+The keys.json file is where you put your Google Images Search and YouTube API keys. 
 
 ```javascript
 // keys_sample.json
@@ -213,7 +219,8 @@ On your command line, navigate to the __certs__ folder, then enter `cp keys_samp
 }
 ```
 
-### Deploy
+### Deploy to AWS Lambda 
+
   1. Go inside your local __src__ directory, select all files and folders and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at12.07.02.png)
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.23.28.png)
