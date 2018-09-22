@@ -242,43 +242,56 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 
 1. Go inside your local __src__ directory, select all files and folders, then create a .ZIP file.
 	- Note: Make sure the .ZIP file does not contain the src directory itself, otherwise Lambda function will not work.
+	
 	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at12.07.02.png)
+	
 	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.23.28.png)
 
 1. Go to the __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
 
 1. Find __Lambda__ service. 
 	- Note: make sure you are in the __US East (N. Virginia)__ region or you won't be able to use Alexa with Lambda.
+	
 	![](Screenshots/2.11-Lambda.png)
 
 1. Click on the __Create a Function__ button.
+
 	![](Screenshots/2.12-CreateFun.png)
 
 1. Choose __Author from scratch__. Name the function (any name is fine). 
+
 	![](Screenshots/2.13-createFun.png)
 	
 1. Keep “Create new role from template(s)” and enter a role name (any name is fine)
+
 	![](Screenshots/2.13-role.png)
 	
 1. Click on the __Create function__ button.
   
 1. Under Add triggers menu on the left, click on __Alexa Skills Kit__
+
 	![](Screenshots/2.14-LambdaSuccess.png)
+	
 	![](Screenshots/2.15-ASK.png)
   
 1. __Disable__ Skill ID Verification. Click __Add__ button. Then scroll up and click the orange __Save__ button
+
 	![](Screenshots/2.16-Triggers.png)
+	
 	![](Screenshots/2.17-Save.png)
   
 1. Click on the box with your function name in the Designer section. Select Code entry type as __“Upload a .ZIP file”__
+
 	![](Screenshots/2.18-UploadCode.png)
 
 1. Click on __Upload__ button, then upload the zip file created in Step 1. Then __Save__
  
 1. Copy the __ARN__ from the top right. 
+
 	![](Screenshots/2.19-Save.png)
 	
 1. Go back to the Alexa Developer Console, click on Endpoint on the left menu bar, and paste the ARN to __Default Region__. Click __Save Endpoints__
+
 	![](Screenshots/2.28-SavedEndpoint.png)
   
 ### Test
@@ -313,9 +326,11 @@ We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirr
 	`npm install`
 
 4. Copy the __certs__ folder in your Lambda function code (under MirrorMirrorOnTheWallSkill/src) to the MMM-MirrorMirrorOnTheWall folder
+	
 	![](???)
 	
 5. Open __MirrorMirror.js__ in MMM-MirrorMirrorOnTheWall folder with a text editor. Copy and paste your IoT Device __HTTPS Rest API Endpoint__ to line 18, replacing `YOURID.iot.us-east-1.amazonaws.com`
+	
 	![](???)
 
 6. Copy and paste below code to MagicMirror/config/config.js
