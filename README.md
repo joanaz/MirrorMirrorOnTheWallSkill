@@ -285,8 +285,6 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 
 You can now test your Alexa skill by going to the Test tab on the Alexa Developer Console and enabling testing. Type “start magic mirror” in the textbox and see what happens! 
 
-![](Screenshots/2.30-Test.png)
-
 You can also test your Alexa skill on [EchoSim](https://echosim.io/), by saying "Alexa, ask magic mirror to say hello".
 
 Another testing tool is the [Amazon Alexa website](https://alexa.amazon.com/spa/index.html#cards), where you can see each of your Alexa voice command and Alexa's response. If you get the image command to work, you will see the image on the card too.
@@ -315,18 +313,20 @@ We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirr
 	`npm install`
 
 4. Copy the __certs__ folder in your Lambda function code (under MirrorMirrorOnTheWallSkill/src) to the MMM-MirrorMirrorOnTheWall folder
-
+	![](???)
+	
 5. Open __MirrorMirror.js__ in MMM-MirrorMirrorOnTheWall folder with a text editor. Copy and paste your IoT Device __HTTPS Rest API Endpoint__ to line 18, replacing `YOURID.iot.us-east-1.amazonaws.com`
+	![](???)
 
 6. Copy and paste below code to MagicMirror/config/config.js
 
-```javascript
-{
-    module: 'MMM-MirrorMirrorOnTheWall',
-    position: "middle_center",
-    config: {}
-}
-```
+	```javascript
+	{
+	    module: 'MMM-MirrorMirrorOnTheWall',
+	    position: "middle_center",
+	    config: {}
+	}
+	```
 
 ## Have Fun!
 
