@@ -319,7 +319,7 @@ We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirr
 
 ## Have Fun!
 
-_### Now you have completed all the steps! Congratulations!_
+### _Now you have completed all the steps! Congratulations!_
 
 You can invoke your Alexa skill by saying `Alexa, start Magic Mirror`. Next, you can say any of the following commands to trigger different actions on your Magic Mirror.
 
