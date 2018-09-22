@@ -149,12 +149,9 @@ In this section, we build the language model for our Alexa Skill by defining the
 
 1. Click on __JSON Editor__ on the left menu bar. Delete everything in there. 
 
-1. Go to [__InteractionModel.json__](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/blob/master/speechAssets/InteractionModel.json) in the speechAssets folder, and copy everything in the file, and paste it in JSON Editor. __Save Model__.
+1. Go to [__InteractionModel.json__](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/blob/master/speechAssets/InteractionModel.json) in the speechAssets folder, and copy everything in the file, and paste it in JSON Editor. __Save Model__. __Build Model__
   ![](Screenshots/2.25-Intents.png)
-  
-1. Click __Build Model__ on the main page.
-  ![](Screenshots/2.29-Build.png)
-  
+
 1. Click on __Endpoint__ on the left menu bar. Select __AWS Lambda ARN__. Copy your __Skill ID__ to be used later in Lambda function deployment
   ![](Screenshots/2.28-SavedEndpoint.png)
 
@@ -229,6 +226,7 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 ### Deploy to AWS Lambda 
 
 1. Go inside your local __src__ directory, select all files and folders, then create a .ZIP file.
+
 	Note: Make sure the .ZIP file does not contain the src directory itself, otherwise Lambda function will not work.
 	
 	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at12.07.02.png)
@@ -239,36 +237,47 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 
 1. Find __Lambda__ service. 
 	Note: make sure you are in the __US East (N. Virginia)__ region or you won't be able to use Alexa with Lambda.
+	
 	![](Screenshots/2.11-Lambda.png)
 
 1. Click on the __Create a Function__ button.
+
 	![](Screenshots/2.12-CreateFun.png)
 
 1. Choose __Author from scratch__. Name the function (any name is fine). 
+
 	![](Screenshots/2.13-createFun.png)
 	
 1. Keep “Create new role from template(s)” and enter a role name (any name is fine)
+
 	![](Screenshots/2.13-role.png)
 	
 1. Click on the __Create function__ button.
   
 1. Under Add triggers menu on the left, click on __Alexa Skills Kit__
+
 	![](Screenshots/2.14-LambdaSuccess.png)
+	
 	![](Screenshots/2.15-ASK.png)
   
 1. __Disable__ Skill ID Verification. Click __Add__ button. Then scroll up and click the orange __Save__ button
+
 	![](Screenshots/2.16-Triggers.png)
+	
 	![](Screenshots/2.17-Save.png)
   
 1. Click on the box with your function name in the Designer section. Select Code entry type as __“Upload a .ZIP file”__
+
 	![](Screenshots/2.18-UploadCode.png)
 
 1. Click on __Upload__ button, then upload the zip file created in Step 1. Then __Save__
-	![](Screenshots/2.19-Save.png)
  
 1. Copy the __ARN__ from the top right. 
+
+	![](Screenshots/2.19-Save.png)
 	
 1. Go back to the Alexa Developer Console, click on Endpoint on the left menu bar, and paste the ARN to __Default Region__. Click __Save Endpoints__
+
 	![](Screenshots/2.28-SavedEndpoint.png)
   
   
