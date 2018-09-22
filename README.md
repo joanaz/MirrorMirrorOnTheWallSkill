@@ -4,11 +4,7 @@
 
 ![](Screenshots/mirrorsystem.PNG)
 
-<p align="left">
-	<a href="https://david-dm.org/joanaz/MirrorMirrorOnTheWallSkill"><img src="https://david-dm.org/joanaz/MirrorMirrorOnTheWallSkill.svg" alt="Dependency Status"></a>
-	<a href="https://david-dm.org/joanaz/MirrorMirrorOnTheWallSkill#info=devDependencies"><img src="https://david-dm.org/joanaz/MirrorMirrorOnTheWallSkill/dev-status.svg" alt="devDependency Status"></a>
-	<a href="http://choosealicense.com/licenses/mit"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-</p>
+![http://choosealicense.com/licenses/mit](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Table of Contents
 
