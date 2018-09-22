@@ -80,10 +80,10 @@ To toggle the (web) Developer Tools from mirror mode, use `CTRL-SHIFT-I` or `ALT
 We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an Alexa Skill to send messages to it and a Magic Mirror to subscribe to new messages from it. This will let us control our Magic Mirror with our voice. 
  
 1. Login to __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
-  ![](Screenshots/2-AWSConsole.png)
+	![](Screenshots/2-AWSConsole.png)
 
 1. Choose __US East (N. Virginia)__ region
-  ![](Screenshots/2.1-East.png)
+	![](Screenshots/2.1-East.png)
 
 1. Find __IoT Core__ service
   ![](Screenshots/2.2-IoTCore.png)
@@ -108,15 +108,10 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
 
 1. Follow the instructions to run the start.sh script, which will generate a root-CA.crt
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.35.png)
-	
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.05.png)
-		
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.21.png)
-		
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.34.29.png)
-		
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.35.20.png)
-		
   	- _Note: Don’t worry about errors as long as you get a root-CA.crt file_
   	- _Note note: You will need to copy the credential files here for Lambda function deployment later_
 
@@ -181,7 +176,7 @@ In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lamb
 	`mv keys_sample.json keys.json`
 
 1. Copy the credential files generated in [Section AWS IoT](???). Then open the local MirrorMirrorOnTheWallSkill folder you downloaded, go to src, then certs, paste your credential files here
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.43.51.png)
+	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.43.51.png)
 
 1. Open MirrorMirror.js in src folder with a text editor. Copy and paste your __HTTPS Rest API Endpoint__ to line 17, replacing `YOURID.iot.us-east-1.amazonaws.com`
 	![](???)
@@ -226,18 +221,14 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 ### Deploy to AWS Lambda 
 
 1. Go inside your local __src__ directory, select all files and folders, then create a .ZIP file.
-
-	Note: Make sure the .ZIP file does not contain the src directory itself, otherwise Lambda function will not work.
-	
+	- Note: Make sure the .ZIP file does not contain the src directory itself, otherwise Lambda function will not work.
 	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at12.07.02.png)
-  
 	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.23.28.png)
 
 1. Go to the __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
 
 1. Find __Lambda__ service. 
-
-	Note: make sure you are in the __US East (N. Virginia)__ region or you won't be able to use Alexa with Lambda.
+	- Note: make sure you are in the __US East (N. Virginia)__ region or you won't be able to use Alexa with Lambda.
 	![](Screenshots/2.11-Lambda.png)
 
 1. Click on the __Create a Function__ button.
@@ -253,29 +244,22 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
   
 1. Under Add triggers menu on the left, click on __Alexa Skills Kit__
 	![](Screenshots/2.14-LambdaSuccess.png)
-	
 	![](Screenshots/2.15-ASK.png)
   
 1. __Disable__ Skill ID Verification. Click __Add__ button. Then scroll up and click the orange __Save__ button
-
 	![](Screenshots/2.16-Triggers.png)
-	
 	![](Screenshots/2.17-Save.png)
   
 1. Click on the box with your function name in the Designer section. Select Code entry type as __“Upload a .ZIP file”__
-
 	![](Screenshots/2.18-UploadCode.png)
 
 1. Click on __Upload__ button, then upload the zip file created in Step 1. Then __Save__
  
 1. Copy the __ARN__ from the top right. 
-
 	![](Screenshots/2.19-Save.png)
 	
 1. Go back to the Alexa Developer Console, click on Endpoint on the left menu bar, and paste the ARN to __Default Region__. Click __Save Endpoints__
-
 	![](Screenshots/2.28-SavedEndpoint.png)
-  
   
 ### Test
 
@@ -309,11 +293,9 @@ We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirr
 	`npm install`
 
 4. Copy the __certs__ folder in your Lambda function code (under MirrorMirrorOnTheWallSkill/src) to the MMM-MirrorMirrorOnTheWall folder
-	
 	![](???)
 	
 5. Open __MirrorMirror.js__ in MMM-MirrorMirrorOnTheWall folder with a text editor. Copy and paste your IoT Device __HTTPS Rest API Endpoint__ to line 18, replacing `YOURID.iot.us-east-1.amazonaws.com`
-	
 	![](???)
 
 6. Copy and paste below code to MagicMirror/config/config.js
