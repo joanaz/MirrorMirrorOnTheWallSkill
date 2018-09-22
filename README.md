@@ -14,7 +14,7 @@
 - [Prerequisites](???)
 - [Magic Mirror](???)
   - [Installation]()
-- [AWS IoT Core]()
+- [AWS IoT Core](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/blob/gh-pages/README.md#aws-iot-core)
 - [Alexa Skill]()
   - [Configuration]()
 - [AWS Lambda]()
@@ -136,15 +136,15 @@ In this section, we build the language model for our Alexa Skill by defining the
 1. Name your Skill (any name is fine), select __Custom__ model, and click the __Create a skill__ button.
   ![](Screenshots/2.22-CreateSkill.png)
   
-1. Choose Start from scratch template
+1. Choose __Start from scratch__ template
 
 1. Click on __Invocation__ on the left menu bar. Set “magic mirror” as the invocation name (or any unique phrase). This is the phrase used to activate your skill. __Save Model__.
   ![](Screenshots/2.24-Invocation.png)
 
-1. Click on _JSON Editor_ on the left menu bar. Delete everything in there. 
+1. Click on __JSON Editor__ on the left menu bar. Delete everything in there. 
   ![](???)
 
-1. Go to [__InteractionModel.json__](???) in the speechAssets folder, and copy everything in the file, and paste it in JSON Editor. __Save Model__.
+1. Go to [__InteractionModel.json__](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/blob/master/speechAssets/InteractionModel.json) in the speechAssets folder, and copy everything in the file, and paste it in JSON Editor. __Save Model__.
   ![](Screenshots/2.25-Intents.png)
   
 1. Click __Build Model__ on the main page.
