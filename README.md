@@ -274,11 +274,13 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 ### Test
 
 You can now test your Alexa skill by going to the Test tab on the Alexa Developer Console and enabling testing. Type “start magic mirror” in the textbox and see what happens! 
+
 	![](Screenshots/2.30-Test.png)
 
 You can also test your Alexa skill on [EchoSim](https://echosim.io/), by saying "Alexa, ask magic mirror to say hello".
 
 Another testing tool is the [Amazon Alexa website](https://alexa.amazon.com/spa/index.html#cards), where you can see each of your Alexa voice command and Alexa's response. If you get the image command to work, you will see the image on the card too.
+
 	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at16.42.34.png)
 
 
@@ -288,25 +290,25 @@ Another testing tool is the [Amazon Alexa website](https://alexa.amazon.com/spa/
 
 We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirror² which subscribes to incoming messages from the AWS IoT Device Gateway and displays text/images/video on the MagicMirror², and turns on/off other Magic Mirror Modules according to our commands.
 
-Navigate to the MagicMirror repo we downloaded in Section 1 
+1. Navigate to the MagicMirror repo we downloaded in Section 1 
 
-`cd MagicMirror/modules/`
+	`cd MagicMirror/modules/`
 
-2. 	Download our Magic Mirror Module code inside the modules folder
+2. Download our Magic Mirror Module code inside the modules folder
 
-`git clone https://github.com/joanaz/MMM-MirrorMirrorOnTheWall.git`
+	`git clone https://github.com/joanaz/MMM-MirrorMirrorOnTheWall.git`
 
-3. 	Install Node libraries
+3. Install Node libraries
 
-`cd MMM-MirrorMirrorOnTheWall/`
+	`cd MMM-MirrorMirrorOnTheWall/`
 
-`npm install`
+	`npm install`
 
-4. 	Copy the __certs__ folder in your Lambda function code (under MirrorMirrorOnTheWallSkill/src) to the MMM-MirrorMirrorOnTheWall folder
+4. Copy the __certs__ folder in your Lambda function code (under MirrorMirrorOnTheWallSkill/src) to the MMM-MirrorMirrorOnTheWall folder
 
-5. 	Open __MirrorMirror.js__ in MMM-MirrorMirrorOnTheWall folder with a text editor. Copy and paste your IoT Device __HTTPS Rest API Endpoint__ to line 18, replacing `YOURID.iot.us-east-1.amazonaws.com`
+5. Open __MirrorMirror.js__ in MMM-MirrorMirrorOnTheWall folder with a text editor. Copy and paste your IoT Device __HTTPS Rest API Endpoint__ to line 18, replacing `YOURID.iot.us-east-1.amazonaws.com`
 
-6. 	Copy and paste below code to MagicMirror/config/config.js
+6. Copy and paste below code to MagicMirror/config/config.js
 ```javascript
 {
     module: 'MMM-MirrorMirrorOnTheWall',
@@ -315,83 +317,96 @@ Navigate to the MagicMirror repo we downloaded in Section 1
 }
 ```
 
-Have Fun!
-Now you have completed all the steps! Congratulations! 
-You can invoke your Alexa skill by saying "Alexa, start Magic Mirror". Next, you can say any of the following commands to trigger different actions on your Magic Mirror.
-Display text
+## Have Fun!
+
+### Now you have completed all the steps! Congratulations! 
+
+You can invoke your Alexa skill by saying `Alexa, start Magic Mirror`. Next, you can say any of the following commands to trigger different actions on your Magic Mirror.
+
+### Display text
+
 The text in {} will be displayed on Magic Mirror in bold.
-"say {hello}"
-"say {good morning}"
-"say {you are the fairest of them all}"
-"display text of {hello}"
-"display text of {good morning}"
-"show text of {hello}"
-"show text of {good morning}"
-Turn on/off Magic Mirror Modules
+- "say {hello}"
+- "say {good morning}"
+- "say {you are the fairest of them all}"
+- "display text of {hello}"
+- "display text of {good morning}"
+- "show text of {hello}"
+- "show text of {good morning}"
+
+### Turn on/off Magic Mirror Modules
+
 To turn on/off a Magic Mirror Module, it has to already be installed and configured in MagicMirror². You also have to map its official module name to a transcribable spoken name in ModuleNames.json. For example, we can map "MMM-Globe" (https://github.com/LukeSkywalker92/MMM-Globe ) to "globe", or "currentweather" (https://github.com/MichMich/MagicMirror/tree/master/modules/default/currentweather) to "current weather".
+
 To turn on a Magic Mirror Module, say:
-"start {newsfeed}"
-"start {current weather}"
-"turn on {compliments}"
-"open {smile test}"
+- "start {newsfeed}"
+- "start {current weather}"
+- "turn on {compliments}"
+- "open {smile test}"
+
 To turn off a Magic Mirror Module, say:
-"close {newsfeed}"
-"close {current weather}"
-"turn off {compliments}"
-"finish {smile test}"
+- "close {newsfeed}"
+- "close {current weather}"
+- "turn off {compliments}"
+- "finish {smile test}"
+
 Note: To clear the text/images/video displayed by this module, you can simply turn this module off.
+
 To turn on all Magic Mirror Module, say:
-"open all"
-"open all modules"
-"open every module"
-"open each module"
-"show all modules"
-"show me all modules"
-"show every module"
-"show each module"
-"turn on all"
-"turn on all modules"
-"turn on every module"
-"turn on each module"
-"start all"
-"start all modules"
-"start every module"
-"start each module"
+- "open all"
+- "open all modules"
+- "open every module"
+- "open each module"
+- "show all modules"
+- "show me all modules"
+- "show every module"
+- "show each module"
+- "turn on all"
+- "turn on all modules"
+- "turn on every module"
+- "turn on each module"
+- "start all"
+- "start all modules"
+- "start every module"
+- "start each module"
+
 To turn off all Magic Mirror Module, say:
-"close all"
-"close all modules"
-"close every module"
-"close each module"
-"hide all"
-"hide all modules"
-"hide every module"
-"hide each module"
-"turn off all"
-"turn off all modules"
-"turn off every module"
-"turn off each module"
-Display images
+- "close all"
+- "close all modules"
+- "close every module"
+- "close each module"
+- "hide all"
+- "hide all modules"
+- "hide every module"
+- "hide each module"
+- "turn off all"
+- "turn off all modules"
+- "turn off every module"
+- "turn off each module"
+
+### Display images
 The text in {} will be searched by Google Image Search API, and the returned images will be displayed on your Magic Mirror with the text.
-"find {snow white}"
-"find images of {hunter}"
-"find pictures of {dwarfs}"
-"show me {snow white}"
-"show me pictures of {hunter}"
-"show me images of {dwarfs}"
-"show pictures of {hunter}"
-"show images of {snow white}"
-"display pictures of {dwarfs}"
-"display images of {dwarfs}"
-Display video
+- "find {snow white}"
+- "find images of {hunter}"
+- "find pictures of {dwarfs}"
+- "show me {snow white}"
+- "show me pictures of {hunter}"
+- "show me images of {dwarfs}"
+- "show pictures of {hunter}"
+- "show images of {snow white}"
+- "display pictures of {dwarfs}"
+- "display images of {dwarfs}"
+
+### Display video
 The text in {} will be searched by Youtube Data API, and the returned video will be displayed on your Magic Mirror, with the text. The YouTube video autoplays on a loop.
-"show me how to {make slime}"
-"show me video of {movie trailer}"
-"show me a video of {cats}"
-"show video of {volcanoes}"
-"show a video of {birds}"
-"display video of {animals}"
-"display a video of {rattlesnakes}"
-"find video of {cat}"
-"find video of {cat and dog}"
-"find a video of {snow white}"
+- "show me how to {make slime}"
+- "show me video of {movie trailer}"
+- "show me a video of {cats}"
+- "show video of {volcanoes}"
+- "show a video of {birds}"
+- "display video of {animals}"
+- "display a video of {rattlesnakes}"
+- "find video of {cat}"
+- "find video of {cat and dog}"
+- "find a video of {snow white}"
 
