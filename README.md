@@ -19,13 +19,13 @@
 - Install [Node.js v10.x](https://nodejs.org/en/)
 - *Install [Git](https://git-scm.com/downloads)
 
-*Windows users: 
+*__Windows users__: 
 You must have a Linux Bash Shell to do this Workshop. When you are installing Git, please follow these instructions (https://learn.adafruit.com/windows-tools-for-the-electrical-engineer/git-plus-command-line-tools) to use the Unix tools from the Windows Command Prompt.
 
 
 ## Magic Mirror
 
-repo: [MagicMirror](https://github.com/MichMich/MagicMirror)
+> ### repo: [MagicMirror](https://github.com/MichMich/MagicMirror)
 
 We are using an open source [MagicMirror²](https://github.com/MichMich/MagicMirror) software platform that will allow you to convert your hallway or bathroom mirror into your personal assistant.
 
