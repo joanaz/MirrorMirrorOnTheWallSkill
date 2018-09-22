@@ -1,15 +1,22 @@
 # Mirror Mirror On The Wall
 
-> ### Build your own voice-controlled Magic Mirror
+> ### Build your own voice-controlled Magic Mirror Instructions
 
+## System Overview
 ![](Screenshots/mirrorsystem.PNG)
 
-1. [Prerequisites]()
-1. [Magic Mirror]()
-1. [AWS IoT Core]()
-1. [Alexa Skill]()
-1. [AWS Lambda]()
-1. [Magic Mirror Module]()
+## Table of Contents
+
+- [Prerequisites](???)
+- [Magic Mirror](???)
+ - [Installation]()
+- [AWS IoT Core]()
+- [Alexa Skill]()
+ - [Configuration]()
+- [AWS Lambda]()
+ - [Get code reday]()
+ - [Deploy to Lambda]()
+- [Magic Mirror Module]()
 
 
 ## Prerequisites
@@ -20,7 +27,7 @@
 - *Install [Git](https://git-scm.com/downloads)
 
 *__Windows users__: 
-You must have a Linux Bash Shell to do this Workshop. When you are installing Git, please follow these instructions (https://learn.adafruit.com/windows-tools-for-the-electrical-engineer/git-plus-command-line-tools) to use the Unix tools from the Windows Command Prompt.
+You must have a Linux Bash Shell to do this Workshop. When you are installing Git, please follow these [instructions](https://learn.adafruit.com/windows-tools-for-the-electrical-engineer/git-plus-command-line-tools) to use the Unix tools from the Windows Command Prompt.
 
 
 ## Magic Mirror
@@ -99,13 +106,13 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
   *_Note note: You will need to copy the credential files here for Lambda function deployment later_
 
   1. Go back to the AWS web page, click on Done
-  ![SCREENSHOT]()
+  ![](???)
 
   1. Open the MagicMirror Thing you just created
-  ![SCREENSHOT]()
+  ![](???)
   
   1. Click on Interact on the left menu bar, see the HTTPS Rest API Endpoint in the format of `xxxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com`? You will need to copy this endpoint for Lambda function deployment later
-  ![SCREENSHOT]()
+  ![](???)
   
 
 ## Alexa Skill
@@ -123,13 +130,15 @@ In this section, we build the language model for our Alexa Skill by defining the
   ![](Screenshots/2.22-CreateSkill.png)
   
   1. Choose Start from scratch template
+  ![](???)
 
   1. Click on __Invocation__ on the left menu bar. Set “mirror mirror on the wall” as the invocation name (or any unique phrase). This is the phrase used to activate your skill. __Save Model__.
   ![](Screenshots/2.24-Invocation.png)
 
   1. Click on _JSON Editor_ on the left menu bar. Delete everything in there. 
+  ![](???)
 
-  1. Go to [__InteractionModel.json__]() in the speechAssets folder, and copy everything in the file, and paste it in JSON Editor. __Save Model__.
+  1. Go to [__InteractionModel.json__](???) in the speechAssets folder, and copy everything in the file, and paste it in JSON Editor. __Save Model__.
   ![](Screenshots/2.25-Intents.png)
   
   1. Click __Build Model__ on the main page.
@@ -145,7 +154,24 @@ In this section, we build the language model for our Alexa Skill by defining the
 
 ## AWS Lambda
 
-### Prepare code
+### Get Lambda Function code ready
+
+ 1. 	Download the GitHub repository to your laptop
+ 
+`git clone https://github.com/joanaz/MirrorMirrorOnTheWallSkill.git`
+
+ 2. 	Install node libraries
+ 
+ `cd MirrorMirrorOnTheWallSkill/src/`
+ 
+`npm install`
+
+ 3. 	Navigate to the certs folder and rename keys_sample.json to keys.json
+ 
+`cd certs/`
+ 
+`mv keys_sample.json keys.json`
+
 
   1. Copy all your credential files, then go to your local copy of this repo, and paste them inside the __certs__ folder (which is inside the __src__ folder)
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.43.51.png)
@@ -160,7 +186,7 @@ In this section, we build the language model for our Alexa Skill by defining the
   1. Delete the zip file generated in Section 3 Step 1, and generate a new zip file using the same method. Upload the new zip file to Lambda. This step makes sure the Lambda function only serves request from an authorized source.
   
   
-## 2. Install Dependencies
+### Dependencies
 
 Dependencies are installed by navigating to your __src__ directory on command line, and enter `npm install`.
 
@@ -169,7 +195,7 @@ Dependencies are installed by navigating to your __src__ directory on command li
 - [Google Images Search](https://www.npmjs.com/package/google-images) (installed via `npm install`). Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/keys.json__ (see keys_sample.json below).
 - [Youtube API](https://www.npmjs.com/package/youtube-node)(installed via `npm install`). Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see keys_sample.json below).
 
-### 2.1 keys_sample.json
+### keys.json
 
 On your command line, navigate to the __certs__ folder, then enter `cp keys_sample.json keys.json`, which will create a copy of keys_sample.json called keys.json. Copy and paste your API keys obtained above in __keys.json__.
 
