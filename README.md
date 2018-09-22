@@ -10,20 +10,20 @@
 
 - [Prerequisites](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#prerequisites)
 - [Magic Mirror](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#magic-mirror)
-  - [Installation](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#installation)
+	- [Installation](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#installation)
 - [AWS IoT Core](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-iot-core)
 - [Alexa Skill](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#alexa-skill)
-  - [Configuration](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#configuration)
+	- [Configuration](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#configuration)
 - [AWS Lambda](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-lambda)
-  - [Get Lambda function code ready](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#get-lambda-function-code-ready)
-  - [Deploy to AWS Lambda](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#deploy-to-aws-lambda)
-  - [Test](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#test)
+	- [Get Lambda function code ready](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#get-lambda-function-code-ready)
+	- [Deploy to AWS Lambda](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#deploy-to-aws-lambda)
+	- [Test](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#test)
 - [Magic Mirror Module](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#magic-mirror-module)
 - [Have Fun!](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#have-fun)
-  - [Display text](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-text)
-  - [Turn on/off Magic Mirror Modules](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#turn-onoff-magic-mirror-modules)
-  - [Display images](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-images)
-  - [Display video](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-video)
+	- [Display text](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-text)
+	- [Turn on/off Magic Mirror Modules](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#turn-onoff-magic-mirror-modules)
+	- [Display images](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-images)
+	- [Display video](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-video)
 
 ## Prerequisites
 
@@ -76,34 +76,44 @@ To toggle the (web) Developer Tools from mirror mode, use `CTRL-SHIFT-I` or `ALT
 We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an Alexa Skill to send messages to it and a Magic Mirror to subscribe to new messages from it. This will let us control our Magic Mirror with our voice. 
  
 1. Login to __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
+
 	![](Screenshots/2-AWSConsole.png)
 
 1. Choose __US East (N. Virginia)__ region
+
 	![](Screenshots/2.1-East.png)
 
 1. Find __IoT Core__ service
-  ![](Screenshots/2.2-IoTCore.png)
+	![](Screenshots/2.2-IoTCore.png)
 
 1. Click on __Onboard__ at the left menu bar, under _Configuring a device_, click on __Get Started__
-  ![](Screenshots/2.3-IotOnboard.png)
+
+	![](Screenshots/2.3-IotOnboard.png)
 
 1. Click on __Get Started__
-  ![](Screenshots/2.4-IoTIntro.png)
+
+	![](Screenshots/2.4-IoTIntro.png)
 
 1. Choose __Linux/OSX__ platform, and __Node.js__
-  ![](Screenshots/2.5-IoTPlatform.png)
+
+	![](Screenshots/2.5-IoTPlatform.png)
 
 1. Name your device __MagicMirror__
-  ![](Screenshots/2.5-Register.png)
+
+	![](Screenshots/2.5-Register.png)
 
 1. Download credentials, aka connection kit
-  ![](Screenshots/2.6-DownloadKit.png)
+
+	![](Screenshots/2.6-DownloadKit.png)
 
 1. Click on __Next step__
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.26.png)
+
+	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.26.png)
 
 1. Follow the instructions to run the start.sh script, which will generate a root-CA.crt
+
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.35.png)
+	
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.05.png)
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.21.png)
   	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.34.29.png)
@@ -116,7 +126,8 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
 1. Open the __MagicMirror__ Thing you just created
   
 1. Click on __Interact__ on the left menu bar, see the __HTTPS Rest API Endpoint__ in the format of `xxxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com`? You will need to copy this endpoint for Lambda function deployment later
-  ![](Screenshots/mmThing.png)
+
+	![](Screenshots/mmThing.png)
   
 
 ## Alexa Skill
