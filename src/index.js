@@ -15,7 +15,7 @@ const Alexa = require('alexa-sdk');
  * 
  * replace with your app ID 
  */
-const APP_ID = "amzn1.ask.skill.12001a25-5faa-4651-84dc-cd584a1c5ffa";
+const APP_ID = "amzn1.ask.skill.YOURALEXASKILLID";
 
 const MirrorMirror = require('./MirrorMirror');
 MirrorMirror.setup();
