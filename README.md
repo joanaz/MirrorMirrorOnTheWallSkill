@@ -141,7 +141,7 @@ In this section, we build the language model for our Alexa Skill by defining the
 1. Choose Start from scratch template
   ![](???)
 
-1. Click on __Invocation__ on the left menu bar. Set “mirror mirror on the wall” as the invocation name (or any unique phrase). This is the phrase used to activate your skill. __Save Model__.
+1. Click on __Invocation__ on the left menu bar. Set “magic mirror” as the invocation name (or any unique phrase). This is the phrase used to activate your skill. __Save Model__.
   ![](Screenshots/2.24-Invocation.png)
 
 1. Click on _JSON Editor_ on the left menu bar. Delete everything in there. 
@@ -196,10 +196,15 @@ In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lamb
 Here’s the list of node libraries you installed in the above step. If you are interested in learning more about them, you can go and check out their links.
 
 - [alexa-sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) 
+
 - [aws-iot-device-sdk](https://github.com/aws/aws-iot-device-sdk-js) 
+
 - [Google Images Search](https://www.npmjs.com/package/google-images)
+
 	OPTIONAL: It is for showing images on the Magic Mirror. Follow the instructions in the link to create your own Google Custom Search Engine, and save the CSE ID and API key in __certs/keys.json__ (see keys.json below).
+	
 - [Youtube API](https://www.npmjs.com/package/youtube-node). 
+
 	OPTIONAL: It is for showing a video on the Magic Mirror. Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see keys.json below).
 
 ### keys.json
@@ -207,7 +212,7 @@ Here’s the list of node libraries you installed in the above step. If you are 
 The keys.json file is where you put your Google Images Search and YouTube API keys. 
 
 ```javascript
-// keys_sample.json
+// keys.json
 {
     "cse": {
         "ID": "YOUR GOOGLE CUSTOM SEARCH ENGINE ID",
@@ -221,52 +226,172 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 
 ### Deploy to AWS Lambda 
 
-  1. Go inside your local __src__ directory, select all files and folders and then create a zip file, make sure the zip file does not contain the src directory itself, otherwise Lambda function will not work.
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at12.07.02.png)
-  ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.23.28.png)
+1. Go inside your local __src__ directory, select all files and folders, then create a .ZIP file.
+	Note: Make sure the .ZIP file does not contain the src directory itself, otherwise Lambda function will not work.
+	
+	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at12.07.02.png)
+  
+	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.23.28.png)
 
-  1. Go to the __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__ and click on the __Lambda__ link. Note: ensure you are in __us-east__ region or you won't be able to use Alexa with Lambda.
-  ![](Screenshots/2.11-Lambda.png)
+1. Go to the __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
 
-  1. Click on the __Create a Function__ button.
-  ![](Screenshots/2.12-CreateFun.png)
+1. Find __Lambda__ service. 
+	Note: make sure you are in the __US East (N. Virginia)__ region or you won't be able to use Alexa with Lambda.
+	![](Screenshots/2.11-Lambda.png)
 
-  1. Choose __Author from scratch__. Name the function (any name is fine). Keep the Handler as index.handler (this refers to the index.js file in the zip). __Create new role from template__ and name it anything. Click on the __Create function__ button.
-  ![](Screenshots/2.13-createFun.png)
-  ![](Screenshots/2.13-role.png)
+1. Click on the __Create a Function__ button.
+	![](Screenshots/2.12-CreateFun.png)
 
-  1. Choose trigger __Alexa Skills Kit__ from the left. Disable Skill ID Verification. Click __Add__. Then scroll up and click __Save__.
-  ![](Screenshots/2.14-LambdaSuccess.png)
-  ![](Screenshots/2.15-ASK.png)
-  ![](Screenshots/2.16-Triggers.png)
-  ![](Screenshots/2.17-Save.png)
+1. Choose __Author from scratch__. Name the function (any name is fine). 
+	![](Screenshots/2.13-createFun.png)
+	
+1. Keep “Create new role from template(s)” and enter a role name (any name is fine)
+	![](Screenshots/2.13-role.png)
+	
+1. Click on the __Create function__ button.
+  
+1. Under Add triggers menu on the left, click on __Alexa Skills Kit__
+	![](Screenshots/2.14-LambdaSuccess.png)
+	![](Screenshots/2.15-ASK.png)
+  
+1. __Disable__ Skill ID Verification. Click __Add__ button. Then scroll up and click the orange __Save__ button
+	![](Screenshots/2.16-Triggers.png)
+	![](Screenshots/2.17-Save.png)
+  
+1. Click on the box with your function name in the Designer section. Select Code entry type as __“Upload a .ZIP file”__
+	![](Screenshots/2.18-UploadCode.png)
 
-  1. With your Lambda function selected, select __Code entry type__ as "Upload a .ZIP file"
-  ![](Screenshots/2.18-UploadCode.png)
-
-  1. Click on __Upload__ button, then upload the zip file created in Step 1 to Lambda. Then __Save__.
-  ![](Screenshots/2.19-Save.png)
-
-  1. Copy the __ARN__ from the top right to be used later in the Alexa Skill Setup
-
-
-
-1. Select __AWS Lambda ARN__ for the skill Endpoint and paste the ARN copied from Section 3 Step 8. Click __Save Endpoints__.
-  ![](Screenshots/2.28-SavedEndpoint.png)
+1. Click on __Upload__ button, then upload the zip file created in Step 1. Then __Save__
+	![](Screenshots/2.19-Save.png)
+ 
+1. Copy the __ARN__ from the top right. 
+	![](???)
+	
+1. Go back to the Alexa Developer Console, click on Endpoint on the left menu bar, and paste the ARN to __Default Region__. Click __Save Endpoints__
+	![](Screenshots/2.28-SavedEndpoint.png)
   
   
-  
-  ### Test
-  
-  1. You can test your Alexa skill by entering invoking it in the Test tab.
-  ![](Screenshots/2.30-Test.png)
+### Test
 
-You are now able to start testing your Alexa skill! You should be able to go to the [Amazon Alexa website](http://alexa.amazon.com/spa/index.html#skills/your-skills/?ref-suffix=ysa_gw) and see your skill enabled.
+You can now test your Alexa skill by going to the Test tab on the Alexa Developer Console and enabling testing. Type “start magic mirror” in the textbox and see what happens! 
+	![](Screenshots/2.30-Test.png)
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at16.27.28.png)
+You can also test your Alexa skill on [EchoSim](https://echosim.io/), by saying "Alexa, ask magic mirror to say hello".
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at16.27.37.png)
+Another testing tool is the [Amazon Alexa website](https://alexa.amazon.com/spa/index.html#cards), where you can see each of your Alexa voice command and Alexa's response. If you get the image command to work, you will see the image on the card too.
+	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at16.42.34.png)
 
-When you use your skill, you will see the relevant cards show up on the home page.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at16.42.34.png)
+## Magic Mirror Module
+
+> ### repo: https://github.com/joanaz/MMM-MirrorMirrorOnTheWall 
+
+We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirror² which subscribes to incoming messages from the AWS IoT Device Gateway and displays text/images/video on the MagicMirror², and turns on/off other Magic Mirror Modules according to our commands.
+
+Navigate to the MagicMirror repo we downloaded in Section 1 
+
+`cd MagicMirror/modules/`
+
+2. 	Download our Magic Mirror Module code inside the modules folder
+
+`git clone https://github.com/joanaz/MMM-MirrorMirrorOnTheWall.git`
+
+3. 	Install Node libraries
+
+`cd MMM-MirrorMirrorOnTheWall/`
+
+`npm install`
+
+4. 	Copy the __certs__ folder in your Lambda function code (under MirrorMirrorOnTheWallSkill/src) to the MMM-MirrorMirrorOnTheWall folder
+
+5. 	Open __MirrorMirror.js__ in MMM-MirrorMirrorOnTheWall folder with a text editor. Copy and paste your IoT Device __HTTPS Rest API Endpoint__ to line 18, replacing `YOURID.iot.us-east-1.amazonaws.com`
+
+6. 	Copy and paste below code to MagicMirror/config/config.js
+```javascript
+{
+    module: 'MMM-MirrorMirrorOnTheWall',
+    position: "middle_center",
+    config: {}
+}
+```
+
+Have Fun!
+Now you have completed all the steps! Congratulations! 
+You can invoke your Alexa skill by saying "Alexa, start Magic Mirror". Next, you can say any of the following commands to trigger different actions on your Magic Mirror.
+Display text
+The text in {} will be displayed on Magic Mirror in bold.
+"say {hello}"
+"say {good morning}"
+"say {you are the fairest of them all}"
+"display text of {hello}"
+"display text of {good morning}"
+"show text of {hello}"
+"show text of {good morning}"
+Turn on/off Magic Mirror Modules
+To turn on/off a Magic Mirror Module, it has to already be installed and configured in MagicMirror². You also have to map its official module name to a transcribable spoken name in ModuleNames.json. For example, we can map "MMM-Globe" (https://github.com/LukeSkywalker92/MMM-Globe ) to "globe", or "currentweather" (https://github.com/MichMich/MagicMirror/tree/master/modules/default/currentweather) to "current weather".
+To turn on a Magic Mirror Module, say:
+"start {newsfeed}"
+"start {current weather}"
+"turn on {compliments}"
+"open {smile test}"
+To turn off a Magic Mirror Module, say:
+"close {newsfeed}"
+"close {current weather}"
+"turn off {compliments}"
+"finish {smile test}"
+Note: To clear the text/images/video displayed by this module, you can simply turn this module off.
+To turn on all Magic Mirror Module, say:
+"open all"
+"open all modules"
+"open every module"
+"open each module"
+"show all modules"
+"show me all modules"
+"show every module"
+"show each module"
+"turn on all"
+"turn on all modules"
+"turn on every module"
+"turn on each module"
+"start all"
+"start all modules"
+"start every module"
+"start each module"
+To turn off all Magic Mirror Module, say:
+"close all"
+"close all modules"
+"close every module"
+"close each module"
+"hide all"
+"hide all modules"
+"hide every module"
+"hide each module"
+"turn off all"
+"turn off all modules"
+"turn off every module"
+"turn off each module"
+Display images
+The text in {} will be searched by Google Image Search API, and the returned images will be displayed on your Magic Mirror with the text.
+"find {snow white}"
+"find images of {hunter}"
+"find pictures of {dwarfs}"
+"show me {snow white}"
+"show me pictures of {hunter}"
+"show me images of {dwarfs}"
+"show pictures of {hunter}"
+"show images of {snow white}"
+"display pictures of {dwarfs}"
+"display images of {dwarfs}"
+Display video
+The text in {} will be searched by Youtube Data API, and the returned video will be displayed on your Magic Mirror, with the text. The YouTube video autoplays on a loop.
+"show me how to {make slime}"
+"show me video of {movie trailer}"
+"show me a video of {cats}"
+"show video of {volcanoes}"
+"show a video of {birds}"
+"display video of {animals}"
+"display a video of {rattlesnakes}"
+"find video of {cat}"
+"find video of {cat and dog}"
+"find a video of {snow white}"
+
