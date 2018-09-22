@@ -3,6 +3,7 @@
 > ### Build your own voice-controlled Magic Mirror Instructions
 
 ![](Screenshots/mirrorsystem.PNG)
+
 <p align="left">
 	<a href="https://david-dm.org/joanaz/MirrorMirrorOnTheWallSkill"><img src="https://david-dm.org/joanaz/MirrorMirrorOnTheWallSkill.svg" alt="Dependency Status"></a>
 	<a href="https://david-dm.org/joanaz/MirrorMirrorOnTheWallSkill#info=devDependencies"><img src="https://david-dm.org/joanaz/MirrorMirrorOnTheWallSkill/dev-status.svg" alt="devDependency Status"></a>
@@ -11,17 +12,22 @@
 
 ## Table of Contents
 
-- [Prerequisites](???)
-- [Magic Mirror](???)
-  - [Installation]()
-- [AWS IoT Core](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/blob/gh-pages/README.md#aws-iot-core)
-- [Alexa Skill]()
-  - [Configuration]()
-- [AWS Lambda]()
-  - [Get Lambda Function code ready]()
-  - [Deploy to Lambda]()
-- [Magic Mirror Module]()
-
+- [Prerequisites](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#prerequisites)
+- [Magic Mirror](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#magic-mirror)
+  - [Installation](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#installation)
+- [AWS IoT Core](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-iot-core)
+- [Alexa Skill](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#alexa-skill)
+  - [Configuration](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#configuration)
+- [AWS Lambda](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-lambda)
+  - [Get Lambda function code ready](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#get-lambda-function-code-ready)
+  - [Deploy to AWS Lambda](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#deploy-to-aws-lambda)
+  - [Test](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#test)
+- [Magic Mirror Module](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#magic-mirror-module)
+- [Have Fun!](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#have-fun)
+  - [Display text](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-text)
+  - [Turn on/off Magic Mirror Modules](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#turn-onoff-magic-mirror-modules)
+  - [Display images](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-images)
+  - [Display video](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-video)
 
 ## Prerequisites
 
@@ -142,7 +148,6 @@ In this section, we build the language model for our Alexa Skill by defining the
   ![](Screenshots/2.24-Invocation.png)
 
 1. Click on __JSON Editor__ on the left menu bar. Delete everything in there. 
-  ![](???)
 
 1. Go to [__InteractionModel.json__](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/blob/master/speechAssets/InteractionModel.json) in the speechAssets folder, and copy everything in the file, and paste it in JSON Editor. __Save Model__.
   ![](Screenshots/2.25-Intents.png)
@@ -188,7 +193,7 @@ In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lamb
   ![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.27.21.png)
 
   
-### Dependencies
+#### Dependencies
 
 Here’s the list of node libraries you installed in the above step. If you are interested in learning more about them, you can go and check out their links.
 
@@ -204,7 +209,7 @@ Here’s the list of node libraries you installed in the above step. If you are 
 
 	OPTIONAL: It is for showing a video on the Magic Mirror. Watch this [instruction video](https://youtu.be/Im69kzhpR3I) to create your own Youtube API key, and save it in __certs/keys.json__ (see keys.json below).
 
-### keys.json
+#### keys.json
 
 The keys.json file is where you put your Google Images Search and YouTube API keys. 
 
@@ -262,7 +267,6 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 	![](Screenshots/2.19-Save.png)
  
 1. Copy the __ARN__ from the top right. 
-	![](???)
 	
 1. Go back to the Alexa Developer Console, click on Endpoint on the left menu bar, and paste the ARN to __Default Region__. Click __Save Endpoints__
 	![](Screenshots/2.28-SavedEndpoint.png)
