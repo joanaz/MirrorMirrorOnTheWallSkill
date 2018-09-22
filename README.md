@@ -116,10 +116,9 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
 
 1. Go back to the AWS web page, click on Done
 
-1. Open the MagicMirror Thing you just created
-  ![](???)
+1. Open the __MagicMirror__ Thing you just created
   
-1. Click on Interact on the left menu bar, see the __HTTPS Rest API Endpoint__ in the format of `xxxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com`? You will need to copy this endpoint for Lambda function deployment later
+1. Click on __Interact__ on the left menu bar, see the __HTTPS Rest API Endpoint__ in the format of `xxxxxxxxxxxxxxx.iot.us-east-1.amazonaws.com`? You will need to copy this endpoint for Lambda function deployment later
   ![](???)
   
 
@@ -138,7 +137,6 @@ In this section, we build the language model for our Alexa Skill by defining the
   ![](Screenshots/2.22-CreateSkill.png)
   
 1. Choose Start from scratch template
-  ![](???)
 
 1. Click on __Invocation__ on the left menu bar. Set “magic mirror” as the invocation name (or any unique phrase). This is the phrase used to activate your skill. __Save Model__.
   ![](Screenshots/2.24-Invocation.png)
