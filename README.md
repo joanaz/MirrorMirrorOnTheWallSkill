@@ -8,13 +8,13 @@
 
 - [Prerequisites](???)
 - [Magic Mirror](???)
- - [Installation]()
+  - [Installation]()
 - [AWS IoT Core]()
 - [Alexa Skill]()
- - [Configuration]()
+  - [Configuration]()
 - [AWS Lambda]()
- - [Get code reday]()
- - [Deploy to Lambda]()
+  - [Get code reday]()
+  - [Deploy to Lambda]()
 - [Magic Mirror Module]()
 
 
