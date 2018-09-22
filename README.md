@@ -2,7 +2,7 @@
 
 > ### Build your own voice-controlled Magic Mirror
 
-![](Screenshots/mirrorsystem.png)
+![](Screenshots/mirrorsystem.PNG)
 
 1. [Prerequisites]()
 1. [Magic Mirror]()
