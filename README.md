@@ -10,8 +10,8 @@
 
 - [Prerequisites](#prerequisites)
 - [Magic Mirror](#magic-mirror)
-	- [Installation](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#installation)
-- [AWS IoT Core](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-iot-core)
+	- [Installation](#installation)
+- [AWS IoT Core](aws-iot-core)
 - [Alexa Skill](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#alexa-skill)
 	- [Configuration](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#configuration)
 - [AWS Lambda](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-lambda)
