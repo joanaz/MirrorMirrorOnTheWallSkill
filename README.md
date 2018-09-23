@@ -8,8 +8,8 @@
 
 ## Table of Contents
 
-- [Prerequisites](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#prerequisites)
-- [Magic Mirror](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#magic-mirror)
+- [Prerequisites](#prerequisites)
+- [Magic Mirror](#magic-mirror)
 	- [Installation](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#installation)
 - [AWS IoT Core](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-iot-core)
 - [Alexa Skill](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#alexa-skill)
@@ -38,7 +38,7 @@ You must have a Linux Bash Shell to do this Workshop. When you are installing Gi
 
 ## Magic Mirror
 
-> ### repo: [MagicMirror](https://github.com/MichMich/MagicMirror)
+> ### repo: [MichMich/MagicMirror](https://github.com/MichMich/MagicMirror)
 
 We are using an open source [MagicMirror²](https://github.com/MichMich/MagicMirror) software platform that will allow you to convert your hallway or bathroom mirror into your personal assistant.
 
@@ -109,19 +109,19 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
 
 1. Click on __Next step__
 
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.26.png)
+	![](Screenshots/ScreenShot2017-02-23at17.38.26.png)
 
 1. Follow the instructions to run the start.sh script, which will generate a root-CA.crt
 
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at17.38.35.png)
+	![](Screenshots/ScreenShot2017-02-23at17.38.35.png)
 	
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.05.png)
+	![](Screenshots/ScreenShot2017-02-23at18.33.05.png)
 	
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.33.21.png)
+	![](Screenshots/ScreenShot2017-02-23at18.33.21.png)
 	
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.34.29.png)
+	![](Screenshots/ScreenShot2017-02-23at18.34.29.png)
 	
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.35.20.png)
+	![](Screenshots/ScreenShot2017-02-23at18.35.20.png)
 	
 	- _Note: Don’t worry about errors as long as you get a root-CA.crt file_
 	- _Note note: You will need to copy the credential files here for Lambda function deployment later_
@@ -165,12 +165,12 @@ In this section, we build the language model for our Alexa Skill by defining the
 
 1. Click on __Endpoint__ on the left menu bar. Select __AWS Lambda ARN__. Copy your __Skill ID__ to be used later in Lambda function deployment
 
-	![](Screenshots/2.28-SavedEndpoint.png)
+	![](Screenshots/skillappid.png)
 
 
 ## AWS Lambda
 
-> ### repo: [MirrorMirrorOnTheWallSkill](https://github.com/joanaz/MirrorMirrorOnTheWallSkill)
+> ### repo: [joanaz/MirrorMirrorOnTheWallSkill](https://github.com/joanaz/MirrorMirrorOnTheWallSkill)
 
 In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lambda function processes our voice commands and tells Alexa how to respond, and sends our commands to the AWS IoT Device Gateway.
 
@@ -194,7 +194,7 @@ In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lamb
 
 1. Copy the credential files generated in Section [AWS IoT Core](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-iot-core). Then open the local MirrorMirrorOnTheWallSkill folder you downloaded, go to src, then certs, paste your credential files here
 
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-23at18.43.51.png)
+	![](Screenshots/ScreenShot2017-02-23at18.43.51.png)
 
 1. Open MirrorMirror.js in src folder with a text editor. Copy and paste your __HTTPS Rest API Endpoint__ to line 17, replacing `YOURID.iot.us-east-1.amazonaws.com`
 
@@ -243,9 +243,9 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 1. Go inside your local __src__ directory, select all files and folders, then create a .ZIP file.
 	- Note: Make sure the .ZIP file does not contain the src directory itself, otherwise Lambda function will not work.
 	
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at12.07.02.png)
+	![](Screenshots/ScreenShot2017-02-24at12.07.02.png)
 	
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at11.23.28.png)
+	![](Screenshots/ScreenShot2017-02-24at11.23.28.png)
 
 1. Go to the __[AWS Management Console](https://console.aws.amazon.com/console/home?region=us-east-1)__
 
@@ -292,7 +292,7 @@ The keys.json file is where you put your Google Images Search and YouTube API ke
 	
 1. Go back to the Alexa Developer Console, click on Endpoint on the left menu bar, and paste the ARN to __Default Region__. Click __Save Endpoints__
 
-	![](Screenshots/2.28-SavedEndpoint.png)
+	![](Screenshots/skillarn.png)
   
 ### Test
 
@@ -302,12 +302,12 @@ You can also test your Alexa skill on [EchoSim](https://echosim.io/), by saying 
 
 Another testing tool is the [Amazon Alexa website](https://alexa.amazon.com/spa/index.html#cards), where you can see each of your Alexa voice command and Alexa's response. If you get the image command to work, you will see the image on the card too.
 
-![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at16.42.34.png)
+![](Screenshots/ScreenShot2017-02-24at16.42.34.png)
 
 
 ## Magic Mirror Module
 
-> ### repo: https://github.com/joanaz/MMM-MirrorMirrorOnTheWall 
+> ### repo: [joanaz/MMM-MirrorMirrorOnTheWall](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall)
 
 We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirror² which subscribes to incoming messages from the AWS IoT Device Gateway and displays text/images/video on the MagicMirror², and turns on/off other Magic Mirror Modules according to our commands.
 
