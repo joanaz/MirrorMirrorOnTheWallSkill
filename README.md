@@ -89,7 +89,7 @@ We need to setup an AWS IoT Device Gateway. It works as a hub that will allow an
 
 1. Click on __Onboard__ at the left menu bar, under _Configuring a device_, click on __Get Started__
 
-	![](Screenshots/2.3-IotOnboard.png)
+	![](Screenshots/2.3-IoTOnboard.png)
 
 1. Click on __Get Started__
 
