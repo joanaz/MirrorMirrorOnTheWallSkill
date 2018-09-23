@@ -12,18 +12,18 @@
 - [Magic Mirror](#magic-mirror)
 	- [Installation](#installation)
 - [AWS IoT Core](aws-iot-core)
-- [Alexa Skill](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#alexa-skill)
-	- [Configuration](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#configuration)
-- [AWS Lambda](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-lambda)
-	- [Get Lambda function code ready](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#get-lambda-function-code-ready)
-	- [Deploy to AWS Lambda](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#deploy-to-aws-lambda)
-	- [Test](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#test)
-- [Magic Mirror Module](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#magic-mirror-module)
-- [Have Fun!](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#have-fun)
-	- [Display text](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-text)
-	- [Turn on/off Magic Mirror Modules](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#turn-onoff-magic-mirror-modules)
-	- [Display images](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-images)
-	- [Display video](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#display-video)
+- [Alexa Skill](#alexa-skill)
+	- [Configuration](#configuration)
+- [AWS Lambda](#aws-lambda)
+	- [Get Lambda function code ready](#get-lambda-function-code-ready)
+	- [Deploy to AWS Lambda](#deploy-to-aws-lambda)
+	- [Test](#test)
+- [Magic Mirror Module](#magic-mirror-module)
+- [Have Fun!](#have-fun)
+	- [Display text](#display-text)
+	- [Turn on/off Magic Mirror Modules](#turn-onoff-magic-mirror-modules)
+	- [Display images](#display-images)
+	- [Display video](#display-video)
 
 ## Prerequisites
 
@@ -192,7 +192,7 @@ In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lamb
  
 	`mv keys_sample.json keys.json`
 
-1. Copy the credential files generated in Section [AWS IoT Core](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/tree/gh-pages#aws-iot-core). Then open the local MirrorMirrorOnTheWallSkill folder you downloaded, go to src, then certs, paste your credential files here
+1. Copy the credential files generated in Section [AWS IoT Core](#aws-iot-core). Then open the local MirrorMirrorOnTheWallSkill folder you downloaded, go to src, then certs, paste your credential files here
 
 	![](Screenshots/ScreenShot2017-02-23at18.43.51.png)
 
