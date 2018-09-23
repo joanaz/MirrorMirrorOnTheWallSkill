@@ -1,28 +1,27 @@
 # Mirror Mirror On The Wall Alexa Skill
-An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for communicating and controlling a [MagicMirror](https://github.com/MichMich/MagicMirror) using AWS IoT Device Gateway.
-
-*It is complementary to the Magic Mirror Module [Mirror Mirror On The Wall](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall).*
+An [AWS Lambda](http://aws.amazon.com/lambda) function of an Alexa skill for communicating and controlling a [MagicMirror](https://github.com/MichMich/MagicMirror) using AWS IoT Device Gateway. *It is complementary to the Magic Mirror Module [Mirror Mirror On The Wall](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall).*
 
 Please follow the __[Instructions](https://joanaz.github.io/MirrorMirrorOnTheWallSkill/)__ to setup and deploy this Alexa skill.
 
-## Examples
+
+## Example Voice Commands
 
 ```
-User: "Alexa, On The Wall, hello"
+User: "Alexa, start magic mirror"
 Alexa: "Hello my Queen, what can I do for you? "
 ```
 
-If you are running [AlexaPi](https://github.com/alexa-pi/AlexaPi) on Raspberry Pi, or using a wake word engine like [Snowboy](https://github.com/Kitt-AI/snowboy), you can change the wake word from "Alexa" to "Mirror Mirror", then you can say:
+If you are running [AlexaPi](https://github.com/alexa-pi/AlexaPi) on Raspberry Pi, or using a wake word engine like [Snowboy](https://github.com/Kitt-AI/snowboy), you can change the wake word from "Alexa" to "Mirror Mirror", and then you can change the Alexa Skill invocation name to "on the wall". So together, you can just say:
 
 ```
-User: "Mirror Mirror On The Wall, say Hello"
+User: "Mirror Mirror, on the Wall, say Hello"
 Alexa: "Yes, my Queen. Hello."
 ```
 
 If you enabled the [complementary Magic Mirror Module](https://github.com/joanaz/MMM-MirrorMirrorOnTheWall), the word "hello" will also be displayed on your Magic Mirror.
 
 
-## List of Commands
+## Full List of Voice Commands
 After you invoked this Alexa skill, you can say any of the following commands to trigger different actions on the Magic Mirror.
 
 ### Display text
