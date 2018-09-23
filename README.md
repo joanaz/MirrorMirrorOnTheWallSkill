@@ -11,7 +11,7 @@ User: "Alexa, start magic mirror"
 Alexa: "Hello my Queen, what can I do for you? "
 ```
 
-If you are running [AlexaPi](https://github.com/alexa-pi/AlexaPi) on Raspberry Pi, or using a wake word engine like [Snowboy](https://github.com/Kitt-AI/snowboy), you can change the wake word from "Alexa" to "Mirror Mirror", and then you can change the Alexa Skill invocation name to "on the wall". So together, you can just say:
+If you are running [AlexaPi](https://github.com/alexa-pi/AlexaPi) on Raspberry Pi, or using a wake word engine like [Snowboy](https://github.com/Kitt-AI/snowboy), you can change the wake word from "Alexa" to "Mirror Mirror", you can also change the Alexa Skill invocation name to "on the wall". So together, you just say:
 
 ```
 User: "Mirror Mirror, on the Wall, say Hello"
