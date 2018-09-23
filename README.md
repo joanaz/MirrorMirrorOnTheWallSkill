@@ -170,7 +170,7 @@ In this section, we build the language model for our Alexa Skill by defining the
 
 ## AWS Lambda
 
-> ### repo: https://github.com/joanaz/MirrorMirrorOnTheWallSkill
+> ### repo: [MirrorMirrorOnTheWallSkill](https://github.com/joanaz/MirrorMirrorOnTheWallSkill)
 
 In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lambda function processes our voice commands and tells Alexa how to respond, and sends our commands to the AWS IoT Device Gateway.
 
@@ -198,11 +198,11 @@ In this section, we deploy our AWS Lambda function for our Alexa skill. Our Lamb
 
 1. Open MirrorMirror.js in src folder with a text editor. Copy and paste your __HTTPS Rest API Endpoint__ to line 17, replacing `YOURID.iot.us-east-1.amazonaws.com`
 
-	![](???)
+	![](Screenshots/hostid.png)
 
 1. Open index.js in src folder with a text editor. Copy and paste your __Alexa Skill ID__ to line 18 for the variable __APP_ID__, replacing `amzn1.ask.skill.YOURALEXASKILLID`, and save the change
 
-	![](https://github.com/joanaz/MirrorMirrorOnTheWallSkill/raw/screenshots/screenshots/ScreenShot2017-02-24at15.27.21.png)
+	![](Screenshots/appid.png)
 
   
 #### Dependencies
@@ -327,11 +327,9 @@ We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirr
 
 4. Copy the __certs__ folder in your Lambda function code (under MirrorMirrorOnTheWallSkill/src) to the MMM-MirrorMirrorOnTheWall folder
 	
-	![](???)
-	
 5. Open __MirrorMirror.js__ in MMM-MirrorMirrorOnTheWall folder with a text editor. Copy and paste your IoT Device __HTTPS Rest API Endpoint__ to line 18, replacing `YOURID.iot.us-east-1.amazonaws.com`
 	
-	![](???)
+	![](Screenshots/mirrorhostid.png)
 
 6. Copy and paste below code to MagicMirror/config/config.js
 
