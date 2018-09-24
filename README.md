@@ -331,18 +331,17 @@ We’re Finally up to the last step! We add the Magic Mirror Module to MagicMirr
 	
 	![](Screenshots/mirrorhostid.png)
 
-6. Copy and paste below code to MagicMirror/config/config.js
+6. Copy below code and add it to MagicMirror/config/config.js
 
 	```javascript
 	// modules: [
-	//  {
-	//	module: "alert",
-	//  },
+	// ...
 	{
 	    module: 'MMM-MirrorMirrorOnTheWall',
 	    position: "middle_center",
 	    config: {}
-	}
+	},
+	// ]
 	```
 
 ## Have Fun!
