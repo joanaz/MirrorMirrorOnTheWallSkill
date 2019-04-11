@@ -11,7 +11,7 @@
 - [Prerequisites](#prerequisites)
 - [Magic Mirror](#magic-mirror)
 	- [Installation](#installation)
-- [AWS IoT Core](aws-iot-core)
+- [AWS IoT Core](#aws-iot-core)
 - [Alexa Skill](#alexa-skill)
 	- [Configuration](#configuration)
 - [AWS Lambda](#aws-lambda)
@@ -438,6 +438,6 @@ The text in {} will be searched by Youtube Data API, and the returned video will
 - "find a video of {snow white}"
 
 
-# Instructions on Setting up on Raspberry Pi
+# Instructions of Setting up on Raspberry Pi
 
 https://docs.google.com/document/d/1GrtuYct9cn0VfK6JfuhknK5PuREXOyvYxIIvJAyiPnM/edit?usp=sharing
