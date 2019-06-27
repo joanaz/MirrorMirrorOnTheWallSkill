@@ -6,23 +6,15 @@ app.TOPIC_IMAGES = "MagicMirror:new-images"
 app.TOPIC_TEXT = "MagicMirror:new-text"
 app.TOPIC_MODULE = "MagicMirror:change-module"
 app.TOPIC_VIDEO = "MagicMirror:new-video"
+app.TOPIC_PICTURE = "MagicMirror:try-on"
+
 
 app.setup = function() {
   app.device = awsIot.device({
-    keyPath: __dirname + "/certs/MagicMirror.private.key",
-    certPath: __dirname + "/certs/MagicMirror.cert.pem",
+    keyPath: __dirname + "/certs/SmartMirror.private.key",
+    certPath: __dirname + "/certs/SmartMirror.cert.pem",
     caPath: __dirname + "/certs/root-CA.crt",
-    clientId: "MirrorMirror" + (new Date().getTime()),
-    region: "us-east-1",
-    host: "YOURID.iot.us-east-1.amazonaws.com",
-  });
-
-  app.device.on('connect', function() {
-    console.log('connect');
-  });
-
-  app.device.on('message', function(topic, payload) {
-    console.log('message', topic, payload.toString());
+    host: "YOURHOSTHERE",
   });
 }
 
@@ -31,10 +23,9 @@ app.displayText = function(text, callback) {
   var update = {
     "displayText": text
   };
-
   app.device.publish(app.TOPIC_TEXT, JSON.stringify(update), function() {
-    console.log("Published: \nTopic => " + app.TOPIC_TEXT + "Data => " + JSON.stringify(update));
-    callback()
+    app.device.end();
+    return callback();
   });
 }
 
@@ -46,8 +37,8 @@ app.showImages = function(images, searchTerm, callback) {
   };
 
   app.device.publish(app.TOPIC_IMAGES, JSON.stringify(update), function() {
-    console.log("Published: \nTopic => " + app.TOPIC_IMAGES + "Data => " + JSON.stringify(update));
-    callback()
+    app.device.end();
+    return callback(); 
   });
 }
 
@@ -60,7 +51,20 @@ app.changeModule = function(moduleName, turnOn, callback) {
 
   app.device.publish(app.TOPIC_MODULE, JSON.stringify(update), function() {
     console.log("Published: \nTopic => " + app.TOPIC_MODULE + "Data => " + JSON.stringify(update));
-    callback()
+    app.device.end();
+    return callback()
+  });
+}
+
+app.takePicture = function() {
+  var update = {
+    "takePicture": true,
+  };
+
+  app.device.publish(app.TOPIC_PICTURE, JSON.stringify(update), function() {
+    console.log("Published: \nTopic => " + app.TOPIC_PICTURE + "Data => " + JSON.stringify(update));
+    app.device.end();
+    return;
   });
 }
 
@@ -74,8 +78,10 @@ app.showVideo = function(videoId, searchTerm, callback) {
 
   app.device.publish(app.TOPIC_VIDEO, JSON.stringify(update), function() {
     console.log("Published: \nTopic => " + app.TOPIC_VIDEO + "Data => " + JSON.stringify(update));
-    callback()
+    app.device.end();
+    return callback()
   });
 }
 
 module.exports = app
+
