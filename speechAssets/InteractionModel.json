@@ -36,20 +36,25 @@
                     "slots": [
                         {
                             "name": "displayText",
-                            "type": "AMAZON.LITERAL"
+                            "type": "DISPLAY_TEXT"
                         }
                     ],
                     "samples": [
-                        "say {hi|displayText}",
-                        "say {hello|displayText}",
-                        "say {hello everyone|displayText}",
-                        "say {good morning|displayText}",
-                        "say {good morning to you|displayText}",
-                        "say {how are you doing|displayText}",
-                        "display text of {hello|displayText}",
-                        "display text of {good morning|displayText}",
-                        "show text of {hello|displayText}",
-                        "show text of  {good morning|displayText}"
+                        "say {displayText}",
+                        "display text of {displayText}",
+                        "show text of {displayText}"
+                    ]
+                },
+                {
+                    "name": "TranslateTextIntent",
+                    "slots": [
+                        {
+                            "name": "translateText",
+                            "type": "TRANSLATE_TEXT"
+                        }
+                    ],
+                    "samples": [
+                        "translate {translateText}"
                     ]
                 },
                 {
@@ -57,42 +62,18 @@
                     "slots": [
                         {
                             "name": "moduleName",
-                            "type": "AMAZON.LITERAL"
+                            "type": "MODULE_NAME"
                         }
                     ],
                     "samples": [
-                        "open {compliments|moduleName}",
-                        "open {calendar|moduleName}",
-                        "open {current weather|moduleName}",
-                        "open {smile test|moduleName}",
-                        "open module {compliments|moduleName} ",
-                        "open module {calendar|moduleName}",
-                        "open module {current weather|moduleName}",
-                        "open module {smile test|moduleName} ",
-                        "show {compliments|moduleName}",
-                        "show {calendar|moduleName}",
-                        "show {current weather|moduleName}",
-                        "show {smile test|moduleName}",
-                        "show module {compliments|moduleName} ",
-                        "show module {calendar|moduleName}",
-                        "show module {current weather|moduleName}",
-                        "show module {smile test|moduleName} ",
-                        "turn on {compliments|moduleName}",
-                        "turn on {calendar|moduleName}",
-                        "turn on {current weather|moduleName}",
-                        "turn on {smile test|moduleName}",
-                        "turn on module {compliments|moduleName} ",
-                        "turn on module {calendar|moduleName}",
-                        "turn on module {current weather|moduleName}",
-                        "turn on module {smile test|moduleName} ",
-                        "start {compliments|moduleName}",
-                        "start {calendar|moduleName}",
-                        "start {current weather|moduleName}",
-                        "start {smile test|moduleName}",
-                        "start module {compliments|moduleName} ",
-                        "start module {calendar|moduleName}",
-                        "start module {current weather|moduleName}",
-                        "start module {smile test|moduleName}"
+                        "open {moduleName}",
+                        "open module {moduleName} ",
+                        "show {moduleName}",
+                        "show module {moduleName} ",
+                        "turn on {moduleName}",
+                        "turn on module {moduleName} ",
+                        "start {moduleName}",
+                        "start module {moduleName} "
                     ]
                 },
                 {
@@ -140,34 +121,16 @@
                     "slots": [
                         {
                             "name": "moduleName",
-                            "type": "AMAZON.LITERAL"
+                            "type": "MODULE_NAME"
                         }
                     ],
                     "samples": [
-                        "close {compliments|moduleName}",
-                        "close {calendar|moduleName}",
-                        "close {current weather|moduleName}",
-                        "close {smile test|moduleName}",
-                        "close module {compliments|moduleName} ",
-                        "close module {calendar|moduleName}",
-                        "close module {current weather|moduleName}",
-                        "close module {smile test|moduleName} ",
-                        "hide {compliments|moduleName}",
-                        "hide {calendar|moduleName}",
-                        "hide {current weather|moduleName}",
-                        "hide {smile test|moduleName}",
-                        "hide module {compliments|moduleName} ",
-                        "hide module {calendar|moduleName}",
-                        "hide module {current weather|moduleName}",
-                        "hide module {smile test|moduleName} ",
-                        "turn off {compliments|moduleName}",
-                        "turn off {calendar|moduleName}",
-                        "turn off {current weather|moduleName}",
-                        "turn off {smile test|moduleName}",
-                        "turn off module {compliments|moduleName}",
-                        "turn off module {calendar|moduleName}",
-                        "turn off module {current weather|moduleName}",
-                        "turn off module {smile test|moduleName}"
+                        "close {moduleName}",
+                        "close module {moduleName} ",
+                        "hide {moduleName}",
+                        "hide module {moduleName} ",
+                        "turn off {moduleName}",
+                        "turn off module {moduleName}"
                     ]
                 },
                 {
@@ -175,25 +138,20 @@
                     "slots": [
                         {
                             "name": "searchTerm",
-                            "type": "AMAZON.LITERAL"
+                            "type": "SEARCH_TERM"
                         }
                     ],
                     "samples": [
-                        "find {hunter|searchTerm}",
-                        "find {queen|searchTerm}",
-                        "find {snow white|searchTerm}",
-                        "find {seven dwarfs|searchTerm}",
-                        "find images of {sharks|searchTerm}",
-                        "find images of {elon musk|searchTerm}",
-                        "find pictures of {sharks|searchTerm}",
-                        "show me {apples|searchTerm}",
-                        "show me pictures of {sea animals|searchTerm}",
-                        "show me images of {octopus|searchTerm}",
-                        "show pictures of {volcanoes|searchTerm}",
-                        "show images of {birds|searchTerm}",
-                        "show images of {bill gates|searchTerm}",
-                        "display pictures of {animals|searchTerm}",
-                        "display images of {rattle snakes|searchTerm}"
+                        "find {searchTerm}",
+                        "find images of {searchTerm}",
+                        "find pictures of {searchTerm}",
+                        "show me {searchTerm}",
+                        "show me pictures of {searchTerm}",
+                        "show me images of {searchTerm}",
+                        "show pictures of {searchTerm}",
+                        "show images of {searchTerm}",
+                        "display pictures of {searchTerm}",
+                        "display images of {searchTerm}"
                     ]
                 },
                 {
@@ -201,37 +159,319 @@
                     "slots": [
                         {
                             "name": "searchTermVideo",
-                            "type": "AMAZON.LITERAL"
+                            "type": "SEARCH_TERM_VIDEO"
                         }
                     ],
                     "samples": [
-                        "show me how to {draw|searchTermVideo}",
-                        "show me how to {paint|searchTermVideo}",
-                        "show me how to {make slime|searchTermVideo}",
-                        "show me how to {unlock locks|searchTermVideo}",
-                        "show me video of {apples|searchTermVideo}",
-                        "show me video of {bananas|searchTermVideo}",
-                        "show me video of {movie trailer|searchTermVideo}",
-                        "show me video of {video games|searchTermVideo}",
-                        "show me a video of {sea animals|searchTermVideo}",
-                        "show video of {volcanoes|searchTermVideo}",
-                        "show video of {seabeds|searchTermVideo}",
-                        "show a video of {eagles|searchTermVideo}",
-                        "show a video of {birds|searchTermVideo}",
-                        "display video of {animals|searchTermVideo}",
-                        "display a video of {rattle snakes|searchTermVideo}",
-                        "find video of {cats|searchTermVideo}",
-                        "find video of {dogs|searchTermVideo}",
-                        "find video of {lego superman|searchTermVideo}",
-                        "find video of {lego batman|searchTermVideo}",
-                        "find video of {cat and dog|searchTermVideo}",
-                        "find video of {apple and orange|searchTermVideo}",
-                        "find a video of {snow white|searchTermVideo}",
-                        "find a video of {evil queen|searchTermVideo}"
+                        "show me how to {searchTermVideo}",
+                        "show me video of {searchTermVideo}",
+                        "show me a video of {searchTermVideo}",
+                        "show video of {searchTermVideo}",
+                        "show a video of {searchTermVideo}",
+                        "display video of {searchTermVideo}",
+                        "display a video of {searchTermVideo}",
+                        "find video of {searchTermVideo}",
+                        "find video of {searchTermVideo}",
+                        "find a video of {searchTermVideo}"
                     ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
                 }
             ],
-            "types": []
+            "types": [
+                {
+                    "name": "TRANSLATE_TEXT",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "hi"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hello"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hello everyone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "good morning"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "good morning to you"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "how are you doing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "DISPLAY_TEXT",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "hi"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hello"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hello everyone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "good morning"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "good morning to you"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "how are you doing"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "MODULE_NAME",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "compliments"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "calendar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "current weather"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "smile test"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SEARCH_TERM",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "hunter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "queen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "snow white"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seven dwarfs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sharks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "elon musk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apples"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sea animals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "octopus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "volcanoes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "birds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bill gates"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rattle snakes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SEARCH_TERM_VIDEO",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "draw"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "paint"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "make slime"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "unlock locks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apples"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bananas"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "movie trailer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "video games"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sea animals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "volcanoes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seabeds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eagles"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "birds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rattle snakes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cats"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dogs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lego superman"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lego batman"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cat and dog"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apple and orange"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "snow white"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "evil queen"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     }
 }
