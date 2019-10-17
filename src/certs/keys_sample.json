@@ -5,5 +5,14 @@
   },
   "youtube": {
     "API_key": "YOUR YOUTUBE API KEY"
+  },
+  "translate": {
+  	"projectId": "YOUR GOOGLE PROJECT ID",
+  	"sourceLanguageCode": "en-US",
+  	"targetLanguageCode": "zh-CN",
+  	"translateServiceKeyPath": "/tmp/googleService.json"
+  },
+  "thing": {
+    	"host": "MM THING HOST"
   }
 }
